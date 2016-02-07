@@ -246,7 +246,6 @@ _Pvt_Extensions
 ExportedObj/
 *.unityproj
 *.tmp
-*.user
 *.userprefs
 *.pidb
 *.booproj
