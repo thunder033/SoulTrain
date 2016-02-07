@@ -10,9 +10,9 @@
 
 ####Setup*
 1. Open Options menu through `Tools` > `Options`
-2. Under `Diff` tab, set `External Diff Tool` to `Custom`
+2. Under the `Diff` tab, set `External Diff Tool` to `Custom`
 3. Set the `Diff Command` to `[VS Install Directory]\Common7\IDE\vsDiffMerge.exe`, where `[VS Install Directory]` is probably `C:\Program Files (x86)\Visual Studio 14.0` and `Arguments` to `$LOCAL $REMOTE \\t`
-4. Under `Diff` tab, set `External Merge Tool` to `Custom`
+4. Set `External Merge Tool` to `Custom`
 5. Set the `Diff Command` to `[VS Install Directory]\Common7\IDE\vsDiffMerge.exe`, where `[VS Install Directory]` is probably `C:\Program Files (x86)\Visual Studio 14.0` and `Arguments` to `$LOCAL $REMOTE $BASE $MERGED \\m`
 
 *[Source](https://github.com/Inmeta/Knowledge/wiki/Setting-Up-DiffMerge#setting-up-diff-and-merge-for-sourcetree)
@@ -22,7 +22,7 @@
 When a merge conflict is encountered in SourceTree:
 
 1. Right click on the conflicted file and select `Resolve Conflicts` > `Launch External Merge Tool` *(note: Visual Studio may take a few seconds to start up)*
-2. When Visual Studio Luanches, select the correct edits and make adjustment to resolve conflict
+2. When Visual Studio Launches, select the correct changesets and make adjustments to resolve conflicts
 3. Click `Accept Merge` (small button in the directly above the split view to the left). The spilt view should be closed.
 4. When you focus back to SourceTree, the merged file should be automatically Staged and a `[conflicted file].orig` created. The `.orig` file can be safely deleted.
 
@@ -39,6 +39,6 @@ When a merge conflict is encountered in SourceTree:
 Better ingration between Visual Studio and Unity
 
 1. [Download VS Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9) and complete setup
-2. In Unity, open the Build Setting dialog under `File > Build Settings` and check `Development Build` and `Script Debugging` (deselect `Development Build` if you're publishing).
+2. In Unity, open the Build Settings dialog under `File > Build Settings` and check `Development Build` and `Script Debugging` (deselect `Development Build` if you're publishing).
 
-[Source](https://msdn.microsoft.com/en-us/library/dn940025.aspx)
+*[Source](https://msdn.microsoft.com/en-us/library/dn940025.aspx)
