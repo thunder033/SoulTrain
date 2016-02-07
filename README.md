@@ -33,3 +33,12 @@ When a merge conflict is encountered in SourceTree:
 3. In the dialog that appears paste the clone URL into the `Source Path / URL:` field
 2. Set the `Destination Path:` to where ever you want the project
 3. Click `Clone`
+
+####Visual Studio Tools for Unity (VS 2015)*
+
+Better ingration between Visual Studio and Unity
+
+1. [Download VS Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9) and complete setup
+2. In Unity, open the Build Setting dialog under `File > Build Settings` and check `Development Build` and `Script Debugging` (deselect `Development Build` if you're publishing).
+
+[Source](https://msdn.microsoft.com/en-us/library/dn940025.aspx)
