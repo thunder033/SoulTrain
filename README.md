@@ -28,7 +28,7 @@ When a merge conflict is encountered in SourceTree:
 
 ###Project Setup
 
-1. On the repo page in GitHub, change clone url from `SSH` -> `HTTPS` and copy the clone URL (above the repo file listing).
+1. On the repo page in GitHub, change clone url from `SSH` to `HTTPS` and copy the clone URL (above the repo file listing).
 2. In SourceTree, click `Clone / New`.
 3. In the dialog that appears paste the clone URL into the `Source Path / URL:` field
 2. Set the `Destination Path:` to where ever you want the project
