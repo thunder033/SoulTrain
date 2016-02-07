@@ -8,12 +8,14 @@
 
 ###Using Visual Studio as Diff Tool in Source Tree
 
-####Setup
+####Setup*
 1. Open Options menu through `Tools` > `Options`
 2. Under `Diff` tab, set `External Diff Tool` to `Custom`
 3. Set the `Diff Command` to `[VS Install Directory]\Common7\IDE\vsDiffMerge.exe`, where `[VS Install Directory]` is probably `C:\Program Files (x86)\Visual Studio 14.0` and `Arguments` to `$LOCAL $REMOTE \\t`
 4. Under `Diff` tab, set `External Merge Tool` to `Custom`
 5. Set the `Diff Command` to `[VS Install Directory]\Common7\IDE\vsDiffMerge.exe`, where `[VS Install Directory]` is probably `C:\Program Files (x86)\Visual Studio 14.0` and `Arguments` to `$LOCAL $REMOTE $BASE $MERGED \\m`
+
+*[Source](https://github.com/Inmeta/Knowledge/wiki/Setting-Up-DiffMerge#setting-up-diff-and-merge-for-sourcetree)
 
 ####Usage
 
@@ -23,3 +25,11 @@ When a merge conflict is encountered in SourceTree:
 2. When Visual Studio Luanches, select the correct edits and make adjustment to resolve conflict
 3. Click `Accept Merge` (small button in the directly above the split view to the left). The spilt view should be closed.
 4. When you focus back to SourceTree, the merged file should be automatically Staged and a `[conflicted file].orig` created. The `.orig` file can be safely deleted.
+
+###Project Setup
+
+1. On the repo page in GitHub, change clone url from `SSH` -> `HTTPS` and copy the clone URL (above the repo file listing).
+2. In SourceTree, click `Clone / New`.
+3. In the dialog that appears paste the clone URL into the `Source Path / URL:` field
+2. Set the `Destination Path:` to where ever you want the project
+3. Click `Clone`
