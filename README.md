@@ -21,5 +21,5 @@ When a merge conflict is encountered in SourceTree:
 
 1. Right click on the conflicted file and select `Resolve Conflicts` > `Launch External Merge Tool` *(note: Visual Studio may take a few seconds to start up)*
 2. When Visual Studio Luanches, select the correct edits and make adjustment to resolve conflict
-3. Click `Accept Merge` (small button in the directly above the split view to the left)
+3. Click `Accept Merge` (small button in the directly above the split view to the left). The spilt view should be closed.
 4. When you focus back to SourceTree, the merged file should be automatically Staged and a `[conflicted file].orig` created. The `.orig` file can be safely deleted.
