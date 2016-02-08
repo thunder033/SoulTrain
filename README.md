@@ -36,9 +36,12 @@ When a merge conflict is encountered in SourceTree:
 
 ####Visual Studio Tools for Unity (VS 2015)*
 
-Better ingration between Visual Studio and Unity
+Better ingration between Visual Studio and Unity, allows VS breakpoints and inspection
 
-1. [Download VS Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9) and complete setup
-2. In Unity, open the Build Settings dialog under `File > Build Settings` and check `Development Build` and `Script Debugging` (deselect `Development Build` if you're publishing).
+**[Download VS Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)** and complete setup
+
+**For Editor debugging**, run "Attch to Unity" in Visual Studio, then run the game from Unity. *Warning: Pausing from VS crashes Unity.*
+
+**For Build debugging** In Unity, open the Build Settings dialog under `File > Build Settings` and check `Development Build` and `Script Debugging` (haven't actually gotten this to work).
 
 *[Source](https://msdn.microsoft.com/en-us/library/dn940025.aspx)
