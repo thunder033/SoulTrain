@@ -36,7 +36,7 @@ When a merge conflict is encountered in SourceTree:
 
 ####Visual Studio Tools for Unity (VS 2015)*
 
-Better ingration between Visual Studio and Unity, allows VS breakpoints and inspection
+Better integration between Visual Studio and Unity, allows VS breakpoints and inspection
 
 **[Download VS Tools for Unity](https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9)** and complete setup
 
