@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.CSharp", "Unity.CSharp.csproj", "{4123F183-8F61-27AE-EA27-294DDE0CC7EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STUnitTests", "..\STUnitTests\STUnitTests.csproj", "{18695D65-A6BE-4A55-8279-E18AAA141A10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{4123F183-8F61-27AE-EA27-294DDE0CC7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4123F183-8F61-27AE-EA27-294DDE0CC7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4123F183-8F61-27AE-EA27-294DDE0CC7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18695D65-A6BE-4A55-8279-E18AAA141A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18695D65-A6BE-4A55-8279-E18AAA141A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18695D65-A6BE-4A55-8279-E18AAA141A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18695D65-A6BE-4A55-8279-E18AAA141A10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

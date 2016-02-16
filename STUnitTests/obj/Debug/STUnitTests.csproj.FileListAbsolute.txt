@@ -1,0 +1,7 @@
+M:\Documents\git\SoulTrain\STUnitTests\bin\Debug\STUnitTests.dll
+M:\Documents\git\SoulTrain\STUnitTests\bin\Debug\STUnitTests.pdb
+M:\Documents\git\SoulTrain\STUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+M:\Documents\git\SoulTrain\STUnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+M:\Documents\git\SoulTrain\STUnitTests\obj\Debug\STUnitTests.csprojResolveAssemblyReference.cache
+M:\Documents\git\SoulTrain\STUnitTests\obj\Debug\STUnitTests.dll
+M:\Documents\git\SoulTrain\STUnitTests\obj\Debug\STUnitTests.pdb
