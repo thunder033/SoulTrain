@@ -18,4 +18,10 @@ public class Main : MonoBehaviour
     {
 
     }
+
+    public bool LoadDialogLines()
+    {
+        //TODO: implement
+        return true;
+    }
 }
