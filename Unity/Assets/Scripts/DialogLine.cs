@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
+using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
 
-public class DialogLine : MonoBehaviour {
+public class DialogLine {
+
+    public static Dictionary<string, DialogLine> byID = new Dictionary<string, DialogLine>();
 
     public List<DialogLine> responses = new List<DialogLine>();
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public string id;
+    public string text;
+
+    public DialogLine(JSONNode data)
+    {
+        id = data["id"];
+        text = data["text"];
+    }
 }

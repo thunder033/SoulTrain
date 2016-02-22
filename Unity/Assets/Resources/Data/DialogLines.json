@@ -1,0 +1,26 @@
+[
+    {
+        "id": "0",
+        "text": "Dialog Line 1",
+        "soulId": "0",
+        "responseIds": [ "1" ],
+        "clueIds": [ ],
+        "endPositions": [ ]
+    },
+    {
+        "id": "1",
+        "text": "Dialog Line 2",
+        "soulId": "1",
+        "responseIds": [ "2" ],
+        "clueIds": [ ],
+        "endPositions": [ ]
+    },
+    {
+        "id": "2",
+        "text": "Dialog Line 3",
+        "soulId": "2",
+        "responseIds": [ ],
+        "clueIds": [ ],
+        "endPositions": [ ]
+    }
+]
