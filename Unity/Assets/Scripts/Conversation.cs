@@ -5,8 +5,6 @@ public class Conversation {
 
     public static Dictionary<string, Conversation> byID = new Dictionary<string, Conversation>();
 
-    public List<DialogLine> responses = new List<DialogLine>();
-
     public string id;
     bool complete;
     float audienceRadius;
@@ -26,5 +24,14 @@ public class Conversation {
     DialogLine Start()
     {
         currentLine = startLine;
+        return currentLine;
     }
+
+    void Respond(DialogLine line)
+    {
+        currentLine = line;
+        possibleResponses = line.GetResponses();
+        //broadcast to participants
+    }
+    
 }
