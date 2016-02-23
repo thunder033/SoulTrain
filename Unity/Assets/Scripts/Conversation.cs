@@ -1,24 +1,24 @@
 ﻿using SimpleJSON;
+using System;
 using System.Collections.Generic;
 
-public class Conversation {
+public class Conversation : StoryElement
+{
 
     public static Dictionary<string, Conversation> byID = new Dictionary<string, Conversation>();
 
-    public string id;
     bool complete;
     float audienceRadius;
 
     //List<Soul> participants;
-    DialogLine startLine;
+    internal DialogLine startLine;
     DialogLine currentLine;
     List<DialogLine> possibleResponses;
     //List<StoryPosition> startPositions;
 
-    public Conversation(JSONNode data)
+    public Conversation(string id) : base(id)
     {
-        id = data["id"];
-        startLine = DialogLine.byID[data["startDialogLineId"]];
+
     }
 
     DialogLine Start()
@@ -33,5 +33,19 @@ public class Conversation {
         possibleResponses = line.GetResponses();
         //broadcast to participants
     }
-    
+}
+
+public class ConversationLoader : DataLoader
+{
+    public override string fileName { get; protected set; } = "Conversations.json";
+    public override Type DataType { get; protected set; } = typeof(Conversation);
+
+    public override object FromJSON(JSONNode data)
+    {
+        Conversation convo = new Conversation(data["id"]);
+        convo.startLine = Story.GetElementById<DialogLine>(data["startDialogLineId"]);
+
+        AddInstance(convo);
+        return convo;
+    }
 }

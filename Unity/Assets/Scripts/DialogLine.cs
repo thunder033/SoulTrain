@@ -1,30 +1,51 @@
 ﻿using UnityEngine;
 using SimpleJSON;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 
-public class DialogLine {
 
-    public static Dictionary<string, DialogLine> byID = new Dictionary<string, DialogLine>();
-
-    private List<DialogLine> responses = new List<DialogLine>();
-
-    public string id;
+public class DialogLine : StoryElement
+{
+    internal List<DialogLine> responses = new List<DialogLine>();
     public string text;
 
-    public DialogLine(JSONNode data)
+    public DialogLine(string id) : base(id)
     {
-        id = data["id"];
-        text = data["text"];
-
-        for (int i = 0; i < data["responseIds"].AsInt; i++)
-        {
-            responses.Add(byID[data["responseIds"][i]]);
-        }
     }
 
     public List<DialogLine> GetResponses()
     {
         return responses;
+    }
+}
+
+public class DialogLoader : DataLoader
+{
+    public override string fileName { get; protected set; } = "DialogLines.json";
+    public override Type DataType { get; protected set; } = typeof(DialogLine);
+
+    private Dictionary<string, DialogLine> dialogLines;
+
+    public DialogLoader()
+    {
+        dialogLines = new Dictionary<string, DialogLine>();
+    }
+
+    public override object GetByID(string id)
+    {
+        return dialogLines[id];
+    }
+
+    public override object FromJSON(JSONNode data)
+    {
+        DialogLine line = new DialogLine(data["id"]);
+        line.text = data["text"];
+
+        for (int i = 0; i < data["responseIds"].AsInt; i++)
+        {
+            line.responses.Add(GetByID(data["responseIds"][i]) as DialogLine);
+        }
+        dialogLines.Add(line.id, line);
+        return line;
     }
 }
