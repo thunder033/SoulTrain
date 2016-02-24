@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4360A3D7-DBF1-6154-F13D-CCC2E7A9BF27}") = "Unity-Greybox", "Assembly-CSharp-firstpass.csproj", "{7845C4DD-A87F-4BC4-A426-8907918C49AF}"
+EndProject
+Project("{4360A3D7-DBF1-6154-F13D-CCC2E7A9BF27}") = "Unity-Greybox", "Assembly-CSharp-Editor.csproj", "{3967A5B3-527D-62F1-48F6-6E80CB026994}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7845C4DD-A87F-4BC4-A426-8907918C49AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7845C4DD-A87F-4BC4-A426-8907918C49AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7845C4DD-A87F-4BC4-A426-8907918C49AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7845C4DD-A87F-4BC4-A426-8907918C49AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3967A5B3-527D-62F1-48F6-6E80CB026994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3967A5B3-527D-62F1-48F6-6E80CB026994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3967A5B3-527D-62F1-48F6-6E80CB026994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3967A5B3-527D-62F1-48F6-6E80CB026994}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
