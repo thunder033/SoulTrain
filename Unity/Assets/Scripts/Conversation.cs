@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class Conversation : StoryElement
 {
-
-    public static Dictionary<string, Conversation> byID = new Dictionary<string, Conversation>();
-
     bool complete;
     float audienceRadius;
 
@@ -21,13 +18,13 @@ public class Conversation : StoryElement
 
     }
 
-    DialogLine Start()
+    public DialogLine Start()
     {
         currentLine = startLine;
         return currentLine;
     }
 
-    void Respond(DialogLine line)
+    public void Respond(DialogLine line)
     {
         currentLine = line;
         possibleResponses = line.GetResponses();

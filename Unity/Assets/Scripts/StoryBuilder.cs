@@ -6,7 +6,7 @@ using UnityEngine;
 public static class Story {
 
     static public string dataPath {get; } = "Assets/Resources/Data/";
-    static private Dictionary<Type, DataLoader> elementLookup;
+    static private Dictionary<Type, DataLoader> elementLookup = new Dictionary<Type, DataLoader>();
 
     static private DataLoader[] dataLoaders = new DataLoader[] 
     {
@@ -14,20 +14,26 @@ public static class Story {
         new ConversationLoader()
     };
 
+    public static JSONNode Import(DataLoader loader)
+    {
+        elementLookup.Add(loader.DataType, loader);
+
+        var json = JSON.Parse(System.IO.File.ReadAllText(dataPath + loader.fileName));
+
+        for (int i = 0; i < json.Count; i++)
+        {
+            StoryElement element = (StoryElement)loader.FromJSON(json[i]);
+            Debug.Log("Loaded " + loader.DataType + ":" + element.id);
+        }
+
+        return json;
+    }
+
 	public static void LoadStoryElements()
     {
-        elementLookup = new Dictionary<Type, DataLoader>();
         foreach(DataLoader loader in dataLoaders)
         {
-            elementLookup.Add(loader.DataType, loader);
-
-            var json = JSON.Parse(System.IO.File.ReadAllText(dataPath + loader.fileName));
-
-            for (int i = 0; i < json.Count; i++)
-            {
-                StoryElement element = (StoryElement)loader.FromJSON(json[i]);
-                Debug.Log("Loaded " + loader.DataType + ":" + element.id);
-            }
+            Import(loader);
         }
     }
 
