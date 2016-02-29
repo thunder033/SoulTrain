@@ -49,6 +49,11 @@ public abstract class DataLoader
 
     public abstract Type DataType { get; protected set; }
 
+    public virtual void PostLoad()
+    {
+
+    }
+
     private Dictionary<string, object> elementMap;
 
     public DataLoader()
