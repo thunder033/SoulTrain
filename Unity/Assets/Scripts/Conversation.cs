@@ -39,7 +39,7 @@ public class ConversationLoader : DataLoader
 
     public override object FromJSON(JSONNode data)
     {
-        Conversation convo = new Conversation(data["id"]);
+        Conversation convo = new Conversation(data["id"], ToStringArray(data["soulIds"].AsArray));
         convo.startLine = Story.GetElementById<DialogLine>(data["startDialogLineId"]);
 
         AddInstance(convo);

@@ -10,6 +10,7 @@ public static class Story {
 
     static private DataLoader[] dataLoaders = new DataLoader[] 
     {
+        new SoulLoader(),
         new DialogLoader(),
         new ConversationLoader()
     };
@@ -22,7 +23,7 @@ public static class Story {
 
         for (int i = 0; i < json.Count; i++)
         {
-            StoryElement element = (StoryElement)loader.FromJSON(json[i]);
+            IStoryElement element = (IStoryElement)loader.FromJSON(json[i]);
             Debug.Log("Loaded " + loader.DataType + ":" + element.id);
         }
 
@@ -37,9 +38,21 @@ public static class Story {
         }
     }
 
-    public static T GetElementById<T>(string id)
+    public static T GetElementById<T>(string id) where T : IStoryElement
     {
         return (T)elementLookup[typeof(T)].GetByID(id);
+    }
+
+    public static T[] GetElementArray<T>(string[] ids) where T : IStoryElement
+    {
+        T[] elements = new T[ids.Length];
+
+        for (int i = 0; i < ids.Length; i++)
+        {
+            elements[i] = GetElementById<T>(ids[i]);
+        }
+
+        return elements;
     }
 }
 
@@ -65,15 +78,32 @@ public abstract class DataLoader
         return elementMap[id];
     }
 
-    protected void AddInstance(StoryElement element)
+    protected void AddInstance(IStoryElement element)
     {
         elementMap.Add(element.id, element);
     }
 
     public abstract object FromJSON(JSONNode data);
+
+    internal static string[] ToStringArray(JSONArray aNode)
+    {
+        string[] stringArray = new string[aNode.Count];
+
+        for (int i = 0; i < stringArray.Length; i++)
+        {
+            stringArray[i] = aNode[i];
+        }
+
+        return stringArray;
+    }
 }
 
-public abstract class StoryElement
+public interface IStoryElement
+{
+    string id { get; }
+}
+
+public abstract class StoryElement : IStoryElement
 {
     public string id { get; private set; }
 

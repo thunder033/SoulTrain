@@ -26,14 +26,8 @@ public class DialogLoader : DataLoader
 
     public override object FromJSON(JSONNode data)
     {
-        DialogLine line = new DialogLine(data["id"]);
-        line.text = data["text"];
-
-        for (int i = 0; i < data["responseIds"].AsInt; i++)
-        {
-            line.responses.Add(GetByID(data["responseIds"][i]) as DialogLine);
-        }
-
+        DialogLine line = new DialogLine(data["id"], data["text"], data["soulId"]);
+        line.SetReponseIDs(ToStringArray(data["responseIds"].AsArray));
         AddInstance(line);
         return line;
     }
