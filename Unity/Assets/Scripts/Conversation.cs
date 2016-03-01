@@ -4,31 +4,67 @@ using System.Collections.Generic;
 
 public class Conversation : StoryElement
 {
-    bool complete;
+    public bool isComplete { get; private set; }
     float audienceRadius;
 
-    //List<Soul> participants;
+    public delegate void ResponseHandler(Conversation convo);
+    public event ResponseHandler ParticipantResponded;
+
+    List<Soul> participants;
     internal DialogLine startLine;
-    DialogLine currentLine;
+    public DialogLine CurrentLine { get; private set; }
     List<DialogLine> possibleResponses;
     //List<StoryPosition> startPositions;
 
-    public Conversation(string id) : base(id)
+    public Conversation(string id, string[] participantIds) : base(id)
     {
+        participants = new List<Soul>(Story.GetElementArray<Soul>(participantIds));
 
+        foreach(Soul soul in participants)
+        {
+            soul.AddConversation(this);
+        }
     }
 
     public DialogLine Start()
     {
-        currentLine = startLine;
-        return currentLine;
+        foreach (Soul soul in participants)
+        {
+            ParticipantResponded += soul.GetComponent<Soul>().HearResponse;
+        }
+
+        Respond(startLine);
+        return CurrentLine;
+    }
+
+    public void End()
+    {
+        isComplete = true;
+        foreach (Soul soul in participants)
+        {
+            soul.ExitConversation();
+        }
     }
 
     public void Respond(DialogLine line)
     {
-        currentLine = line;
+        CurrentLine = line;
         possibleResponses = line.GetResponses();
+
+        if(possibleResponses.Count == 0)
+        {
+            End();
+        }
+
         //broadcast to participants
+        if(ParticipantResponded != null)
+        {
+            ParticipantResponded(this);
+        }
+    }
+
+    public bool HasParticipant(Soul soul) {
+        return participants.Contains(soul);
     }
 }
 

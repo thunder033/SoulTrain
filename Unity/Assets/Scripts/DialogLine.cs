@@ -6,16 +6,24 @@ using System.Collections.Generic;
 
 public class DialogLine : StoryElement
 {
-    internal List<DialogLine> responses = new List<DialogLine>();
+    public Soul speaker;
+    private string[] responseIDs;
     public string text;
 
-    public DialogLine(string id) : base(id)
+    public DialogLine(string id, string aText, string soulId) : base(id)
     {
+        speaker = Story.GetElementById<Soul>(soulId);
+        text = aText;
+    }
+
+    public void SetReponseIDs(string[] aResponseIds)
+    {
+        responseIDs = aResponseIds;
     }
 
     public List<DialogLine> GetResponses()
     {
-        return responses;
+        return new List<DialogLine>(Story.GetElementArray<DialogLine>(responseIDs));
     }
 }
 
