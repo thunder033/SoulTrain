@@ -19,23 +19,16 @@ public class Main : MonoBehaviour
 
         line = Story.GetElementById<DialogLine>("0");
         string text = line.text;
-        GameObject.Find("DialogBox").GetComponent<Text>().text = text;
+
+        Soul soul0 = GameObject.Find("Soul0").GetComponent<Soul>();
+        Soul soul1 = GameObject.Find("Soul1").GetComponent<Soul>();
+        soul0.Converse(soul1);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            line = line.GetResponses()[0];
-            string text = line.text;
-            GameObject.Find("DialogBox").GetComponent<Text>().text = text;
-        }
-    }
 
-    public bool LoadDialogLines()
-    {
-        //TODO: implement
-        return true;
     }
 }
