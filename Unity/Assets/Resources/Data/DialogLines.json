@@ -18,7 +18,7 @@
     {
         "id": "2",
         "text": "Dialog Line 3",
-        "soulId": "2",
+        "soulId": "0",
         "responseIds": [ ],
         "clueIds": [ ],
         "endPositions": [ ]
