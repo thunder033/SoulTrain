@@ -25,6 +25,21 @@ public class DialogLine : StoryElement
     {
         return new List<DialogLine>(Story.GetElementArray<DialogLine>(responseIDs));
     }
+
+    public List<DialogLine> GetResponses(Soul soul)
+    {
+        List<DialogLine> responses = GetResponses();
+        List<DialogLine> soulResponses = new List<DialogLine>();
+
+        foreach (DialogLine line in responses)
+        {
+            if(line.speaker == soul) {
+                soulResponses.Add(line);
+            }
+        }
+
+        return soulResponses;
+    }
 }
 
 public class DialogLoader : DataLoader

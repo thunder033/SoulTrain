@@ -1,26 +1,42 @@
 [
-    {
-        "id": "0",
-        "text": "Dialog Line 1",
-        "soulId": "0",
-        "responseIds": [ "1" ],
-        "clueIds": [ ],
-        "endPositions": [ ]
-    },
-    {
-        "id": "1",
-        "text": "Dialog Line 2",
-        "soulId": "1",
-        "responseIds": [ "2" ],
-        "clueIds": [ ],
-        "endPositions": [ ]
-    },
-    {
-        "id": "2",
-        "text": "Dialog Line 3",
-        "soulId": "0",
-        "responseIds": [ ],
-        "clueIds": [ ],
-        "endPositions": [ ]
-    }
+  {
+    "id": "0",
+    "text": "Dialog Line 1",
+    "soulId": "0",
+    "responseIds": [ "1" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "1",
+    "text": "Dialog Line 2",
+    "soulId": "1",
+    "responseIds": [ "2", "3" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "2",
+    "text": "Dialog Line 3",
+    "soulId": "0",
+    "responseIds": [ "4" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "3",
+    "text": "Dialog Line 4",
+    "soulId": "0",
+    "responseIds": [ ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "4",
+    "text": "Dialog Line 5",
+    "soulId": "1",
+    "responseIds": [ ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  }
 ]
