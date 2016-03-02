@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour
     Soul soul;
 
     // Use this for initialization
-    void Start()
+    void OnEnable()
     {
         soul = GetComponent<Soul>();
         soul.HearResponse = new Conversation.ResponseHandler(Respond);
