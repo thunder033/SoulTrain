@@ -20,8 +20,8 @@ public class Main : MonoBehaviour
         line = Story.GetElementById<DialogLine>("0");
         string text = line.text;
 
-        Soul soul0 = GameObject.Find("Soul0").GetComponent<Soul>();
-        Soul soul1 = GameObject.Find("Soul1").GetComponent<Soul>();
+        Soul soul0 = GameObject.Find("Bob").GetComponent<Soul>();
+        Soul soul1 = GameObject.Find("Joe").GetComponent<Soul>();
         soul0.Converse(soul1);
 
     }

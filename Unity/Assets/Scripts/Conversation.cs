@@ -30,6 +30,7 @@ public class Conversation : StoryElement
     {
         foreach (Soul soul in participants)
         {
+            soul.JoinConversation(this);
             ParticipantResponded += soul.GetComponent<Soul>().HearResponse;
         }
 
@@ -37,12 +38,20 @@ public class Conversation : StoryElement
         return CurrentLine;
     }
 
+    public void Continue()
+    {
+        if (CurrentLine.IsMonologue)
+        {
+            Respond(CurrentLine.GetResponses()[0]);
+        }
+    }
+
     public void End()
     {
         isComplete = true;
         foreach (Soul soul in participants)
         {
-            soul.ExitConversation();
+            soul.ExitConversation(false);
         }
     }
 

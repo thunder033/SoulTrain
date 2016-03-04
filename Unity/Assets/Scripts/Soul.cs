@@ -48,13 +48,24 @@ public class Soul : MonoBehaviour, IStoryElement {
         while (nextConvo.isComplete || !nextConvo.HasParticipant(soul));
 
         nextConvo.Start();
-        activeConvo = nextConvo;
         return nextConvo;
     }
 
-    public void ExitConversation()
+    public void JoinConversation(Conversation convo)
     {
-        activeConvo = null;
+        activeConvo = convo;
+    }
+
+    public void ExitConversation(bool endConversation)
+    {
+        if (endConversation && activeConvo != null)
+        {
+            activeConvo.End();
+        }
+        else
+        {
+            activeConvo = null;
+        }
     }
 
     public void Speak(DialogLine line)

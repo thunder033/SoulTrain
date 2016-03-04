@@ -22,6 +22,20 @@ public class NPC : MonoBehaviour
 
     public void Respond(Conversation convo)
     {
+        var responses = convo.CurrentLine.GetResponses(soul);
 
+        if(convo.CurrentLine.speaker != soul)
+        {
+            if (responses.Count > 0)
+            {
+                soul.Speak(responses[0]);
+            }
+
+            if (convo.CurrentLine.IsLastLine)
+            {
+                soul.ExitConversation(true);
+            }
+        }
+        
     }
 }

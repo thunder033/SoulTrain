@@ -10,6 +10,24 @@ public class DialogLine : StoryElement
     private string[] responseIDs;
     public string text;
 
+    public bool IsLastLine
+    {
+        get { return responseIDs.Length == 0; }
+    }
+
+    public bool IsMonologue
+    {
+        get
+        {
+            if (responseIDs.Length == 1)
+            {
+                return Story.GetElementById<DialogLine>(responseIDs[0]).speaker == speaker;
+            }
+
+            return false;
+        }
+    }
+
     public DialogLine(string id, string aText, string soulId) : base(id)
     {
         speaker = Story.GetElementById<Soul>(soulId);
