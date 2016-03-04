@@ -446,7 +446,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 168678, guid: fc5589bb364ccdf4994914353d78f101, type: 2}
       propertyPath: m_Name
-      value: Soul0
+      value: Bob
       objectReference: {fileID: 0}
     - target: {fileID: 11407738, guid: fc5589bb364ccdf4994914353d78f101, type: 2}
       propertyPath: _id
@@ -762,7 +762,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 168678, guid: fc5589bb364ccdf4994914353d78f101, type: 2}
       propertyPath: m_Name
-      value: Soul1
+      value: Joe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc5589bb364ccdf4994914353d78f101, type: 2}
