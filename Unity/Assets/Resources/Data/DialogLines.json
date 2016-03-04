@@ -1,7 +1,7 @@
 [
   {
     "id": "0",
-    "text": "Dialog Line 1",
+    "text": "Hi Joe",
     "soulId": "0",
     "responseIds": [ "1" ],
     "clueIds": [ ],
@@ -9,7 +9,7 @@
   },
   {
     "id": "1",
-    "text": "Dialog Line 2",
+    "text": "Hi Bob!",
     "soulId": "1",
     "responseIds": [ "2", "3" ],
     "clueIds": [ ],
@@ -17,7 +17,7 @@
   },
   {
     "id": "2",
-    "text": "Dialog Line 3",
+    "text": "Do you want tacos?",
     "soulId": "0",
     "responseIds": [ "4" ],
     "clueIds": [ ],
@@ -25,15 +25,23 @@
   },
   {
     "id": "3",
-    "text": "Dialog Line 4",
+    "text": "I'm going to punch you in the face.",
     "soulId": "0",
-    "responseIds": [ ],
+    "responseIds": [ "4" ],
     "clueIds": [ ],
     "endPositions": [ ]
   },
   {
     "id": "4",
-    "text": "Dialog Line 5",
+    "text": "That's a great idea!",
+    "soulId": "1",
+    "responseIds": [ "5" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "5",
+    "text": "Let's go do it now!",
     "soulId": "1",
     "responseIds": [ ],
     "clueIds": [ ],
