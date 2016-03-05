@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 [RequireComponent (typeof (Soul))]
@@ -52,20 +53,50 @@ public class DialogGUI : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentLine.IsLastLine)
+            if(activeConvo != null)
             {
-                activeConvo = null;
-                soul.ExitConversation(true);
-            }
-            else if(currentLine.IsMonologue)
-            {
-                activeConvo.Continue();
+                AdvanceConversation();
             }
             else
             {
-                Respond();
-            }
-            
+                StartConversation();
+            }  
+        }
+    }
+
+    void AdvanceConversation()
+    {
+        if (currentLine.IsLastLine)
+        {
+            activeConvo = null;
+            soul.ExitConversation(true);
+        }
+        else if (currentLine.IsMonologue)
+        {
+            activeConvo.Continue();
+        }
+        else
+        {
+            Respond();
+        }
+    }
+
+    /// <summary>
+    /// Start a converstation with the closest soul in speaking distance and point towards them
+    /// </summary>
+    void StartConversation()
+    {
+        Soul closestSoul = FindObjectsOfType<Soul>()
+            .Where(s => s != soul && s.InSpeakingDistance(soul))
+            .OrderBy(s => s.transform.position - soul.transform.position)
+            .First();
+
+        if(closestSoul != null)
+        {
+            closestSoul.Converse(soul);
+            Vector3 diff = closestSoul.transform.position - soul.transform.position;
+            float heading = Mathf.Atan2(diff.x, diff.z) * Mathf.Rad2Deg;
+            soul.transform.localEulerAngles = new Vector3(0, heading, 0);
         }
     }
 
