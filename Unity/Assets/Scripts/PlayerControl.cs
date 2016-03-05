@@ -3,32 +3,21 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
-    Vector3 velocity;
-
-    public float speed;
-    float maxSpeed = 5;
-
-	// Use this for initialization
-	void Start () {
+    public Vector3 inputVelocity {get; private set;}
+    public float speed = 1;
 	
-	}
-	
-	// Update is called once per frame
 	void Update () {
-        velocity = new Vector3();
+        //get the player inputted velocity
+        inputVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
+        //move avatar after applying speed and delta time
+        transform.position += inputVelocity * speed * Time.deltaTime;
 
-        velocity.y = 0;
-        velocity.x += Input.GetAxis("Horizontal") * Time.deltaTime;
-        velocity.z += Input.GetAxis("Vertical") * Time.deltaTime;
-
-        transform.position += velocity;
-        float heading = Mathf.Atan2(velocity.x, velocity.z) * Mathf.Rad2Deg;
-
-        if(velocity.magnitude > 0)
+        if(inputVelocity.magnitude > 0)
         {
-            transform.localEulerAngles = new Vector3(0, heading, 0);
+            //get y component of the avatar's velociy and degrees
+            float heading = Mathf.Atan2(inputVelocity.x, inputVelocity.z) * Mathf.Rad2Deg;
+            //rotate the avatar to match their velocity
+            transform.localEulerAngles = Vector3.up * heading;
         }
-        
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, heading, 0), 5 * Time.deltaTime);
     }
 }
