@@ -8,6 +8,8 @@ public class Player_Move : MonoBehaviour {
 	float initialX;
 	float initialY;
 	float initialZ;
+	Vector3 forward;
+	float directionAngle;
 
 	// Use this for initialization
 	void Start () {
@@ -20,22 +22,27 @@ public class Player_Move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("w"))
+		if (Input.GetKey("w"))
 		{
 			distForward++;
+			transform.forward = new Vector3 (0, 0, 1);
 		}
-		if (Input.GetKeyDown ("a"))
+		if (Input.GetKey("a"))
 		{
 			distRight--;
+			transform.forward = new Vector3 (-1, 0, 0);
 		}
-		if (Input.GetKeyDown ("s"))
+		if (Input.GetKey("s"))
 		{
 			distForward--;
+			transform.forward = new Vector3 (0, 0, -1);
 		}
-		if (Input.GetKeyDown ("d"))
+		if (Input.GetKey("d"))
 		{
 			distRight++;
+			transform.forward = new Vector3 (1, 0, 0);
 		}
-		transform.position = new Vector3 (initialX + distRight, initialY, initialZ + distForward);
+		transform.position = new Vector3 (initialX + distRight/5, initialY, initialZ + distForward/5);
+		//transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
 	}
 }
