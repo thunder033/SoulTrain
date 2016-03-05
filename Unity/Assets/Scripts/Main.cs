@@ -5,24 +5,15 @@ public class Main : MonoBehaviour
 {
     public Canvas canvas;
 
-    DialogLine line;
-
     // Use this for initialization
     void Start()
     {
         Vector3 position = new Vector3();
-        GameObject trainCar = (GameObject)Instantiate(Resources.Load("Prefabs/TrainCar") as GameObject);
+        GameObject trainCar = Instantiate(Resources.Load("Prefabs/TrainCar") as GameObject);
         trainCar.transform.position = position;
         trainCar.transform.Rotate(new Vector3(0, 45, 0));
 
         Story.LoadStoryElements();
-
-        line = Story.GetElementById<DialogLine>("0");
-        string text = line.text;
-
-        Soul soul0 = GameObject.Find("Bob").GetComponent<Soul>();
-        Soul soul1 = GameObject.Find("Joe").GetComponent<Soul>();
-        soul0.Converse(soul1);
 
     }
 
