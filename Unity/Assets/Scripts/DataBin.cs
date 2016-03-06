@@ -16,6 +16,11 @@ public abstract class DataBin
 
     }
 
+    public virtual void OnBeforeLoad()
+    {
+
+    }
+
     private Dictionary<string, IStoryElement> elementMap;
 
     public DataBin()

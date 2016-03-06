@@ -19,6 +19,7 @@ public static class Story {
 
     public static JSONNode Import(DataBin loader)
     {
+        loader.OnBeforeLoad();
         elementLookup.Add(loader.DataType, loader);
 
         var json = JSON.Parse(System.IO.File.ReadAllText(dataPath + loader.fileName));

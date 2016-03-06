@@ -98,6 +98,11 @@ public class SoulLoader : DataBin
 
     public SoulLoader()
     {
+        
+    }
+
+    public override void OnBeforeLoad()
+    {
         souls = UnityEngine.Object.FindObjectsOfType<Soul>();
     }
 
