@@ -41,7 +41,7 @@ public class DialogLine : StoryElement
 
     public List<DialogLine> GetResponses()
     {
-        return new List<DialogLine>(Story.GetElementArray<DialogLine>(responseIDs));
+        return new List<DialogLine>(Story.GetElements<DialogLine>(responseIDs));
     }
 
     public List<DialogLine> GetResponses(Soul soul)
@@ -60,12 +60,12 @@ public class DialogLine : StoryElement
     }
 }
 
-public class DialogLoader : DataLoader
+public class DialogLoader : DataBin
 {
     public override string fileName { get; protected set; } = "DialogLines.json";
     public override Type DataType { get; protected set; } = typeof(DialogLine);
 
-    public override object FromJSON(JSONNode data)
+    public override IStoryElement FromJSON(JSONNode data)
     {
         DialogLine line = new DialogLine(data["id"], data["text"], data["soulId"]);
         line.SetReponseIDs(ToStringArray(data["responseIds"].AsArray));

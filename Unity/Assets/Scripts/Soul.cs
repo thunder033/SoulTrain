@@ -24,7 +24,7 @@ public class Soul : MonoBehaviour, IStoryElement {
     private float speakingDistance = 5;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         conversations = new List<Conversation>();
     }
 	
@@ -52,7 +52,7 @@ public class Soul : MonoBehaviour, IStoryElement {
             }
             nextConvo = conversations[index++];
         }
-        while (nextConvo.isComplete || !nextConvo.HasParticipant(soul));
+        while (nextConvo.IsComplete || !nextConvo.HasParticipant(soul));
 
         nextConvo.Start();
         return nextConvo;
@@ -89,7 +89,7 @@ public class Soul : MonoBehaviour, IStoryElement {
 /// <summary>
 /// The Soul Loader links instances of Souls defined in the scene to those defined in the data file
 /// </summary>
-public class SoulLoader : DataLoader
+public class SoulLoader : DataBin
 {
     Soul[] souls;
 
@@ -101,7 +101,7 @@ public class SoulLoader : DataLoader
         souls = UnityEngine.Object.FindObjectsOfType<Soul>();
     }
 
-    public override object FromJSON(JSONNode data)
+    public override IStoryElement FromJSON(JSONNode data)
     {
         foreach(Soul soul in souls)
         {
