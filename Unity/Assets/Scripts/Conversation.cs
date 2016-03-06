@@ -1,37 +1,93 @@
 ﻿using SimpleJSON;
+using System;
 using System.Collections.Generic;
 
-public class Conversation {
-
-    public static Dictionary<string, Conversation> byID = new Dictionary<string, Conversation>();
-
-    public string id;
-    bool complete;
+public class Conversation : StoryElement
+{
+    public bool isComplete { get; private set; }
     float audienceRadius;
 
-    //List<Soul> participants;
-    DialogLine startLine;
-    DialogLine currentLine;
+    public delegate void ResponseHandler(Conversation convo);
+    public event ResponseHandler ParticipantResponded;
+
+    List<Soul> participants;
+    internal DialogLine startLine;
+    public DialogLine CurrentLine { get; private set; }
     List<DialogLine> possibleResponses;
     //List<StoryPosition> startPositions;
 
-    public Conversation(JSONNode data)
+    public Conversation(string id, string[] participantIds) : base(id)
     {
-        id = data["id"];
-        startLine = DialogLine.byID[data["startDialogLineId"]];
+        participants = new List<Soul>(Story.GetElementArray<Soul>(participantIds));
+
+        foreach(Soul soul in participants)
+        {
+            soul.AddConversation(this);
+        }
     }
 
-    DialogLine Start()
+    public DialogLine Start()
     {
-        currentLine = startLine;
-        return currentLine;
+        foreach (Soul soul in participants)
+        {
+            soul.JoinConversation(this);
+            ParticipantResponded += soul.GetComponent<Soul>().HearResponse;
+        }
+
+        Respond(startLine);
+        return CurrentLine;
     }
 
-    void Respond(DialogLine line)
+    public void Continue()
     {
-        currentLine = line;
+        if (CurrentLine.IsMonologue)
+        {
+            Respond(CurrentLine.GetResponses()[0]);
+        }
+    }
+
+    public void End()
+    {
+        isComplete = true;
+        foreach (Soul soul in participants)
+        {
+            soul.ExitConversation(false);
+        }
+    }
+
+    public void Respond(DialogLine line)
+    {
+        CurrentLine = line;
         possibleResponses = line.GetResponses();
+
+        if(possibleResponses.Count == 0)
+        {
+            End();
+        }
+
         //broadcast to participants
+        if(ParticipantResponded != null)
+        {
+            ParticipantResponded(this);
+        }
     }
-    
+
+    public bool HasParticipant(Soul soul) {
+        return participants.Contains(soul);
+    }
+}
+
+public class ConversationLoader : DataLoader
+{
+    public override string fileName { get; protected set; } = "Conversations.json";
+    public override Type DataType { get; protected set; } = typeof(Conversation);
+
+    public override object FromJSON(JSONNode data)
+    {
+        Conversation convo = new Conversation(data["id"], ToStringArray(data["soulIds"].AsArray));
+        convo.startLine = Story.GetElementById<DialogLine>(data["startDialogLineId"]);
+
+        AddInstance(convo);
+        return convo;
+    }
 }
