@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Conversation : StoryElement
 {
-    public bool isComplete { get; private set; }
+    public bool IsComplete { get; private set; }
     float audienceRadius;
 
     public delegate void ResponseHandler(Conversation convo);
@@ -18,12 +18,22 @@ public class Conversation : StoryElement
 
     public Conversation(string id, string[] participantIds) : base(id)
     {
-        participants = new List<Soul>(Story.GetElementArray<Soul>(participantIds));
+        participants = new List<Soul>(Story.GetElements<Soul>(participantIds));
 
         foreach(Soul soul in participants)
         {
             soul.AddConversation(this);
         }
+    }
+
+    public void Load(GameData game)
+    {
+        SetComplete(game.Conversations[id]);
+    }
+
+    private void SetComplete(bool isComplete)
+    {
+        IsComplete = isComplete;
     }
 
     public DialogLine Start()
@@ -48,11 +58,12 @@ public class Conversation : StoryElement
 
     public void End()
     {
-        isComplete = true;
+        SetComplete(true);
         foreach (Soul soul in participants)
         {
             soul.ExitConversation(false);
         }
+        Game.Save();
     }
 
     public void Respond(DialogLine line)
@@ -77,17 +88,25 @@ public class Conversation : StoryElement
     }
 }
 
-public class ConversationLoader : DataLoader
+public class ConversationLoader : DataBin
 {
     public override string fileName { get; protected set; } = "Conversations.json";
     public override Type DataType { get; protected set; } = typeof(Conversation);
 
-    public override object FromJSON(JSONNode data)
+    public override IStoryElement FromJSON(JSONNode data)
     {
         Conversation convo = new Conversation(data["id"], ToStringArray(data["soulIds"].AsArray));
         convo.startLine = Story.GetElementById<DialogLine>(data["startDialogLineId"]);
 
         AddInstance(convo);
         return convo;
+    }
+
+    public override void LoadGame(GameData game)
+    {
+        foreach (Conversation convo in GetAll())
+        {
+            convo.Load(game);
+        }
     }
 }
