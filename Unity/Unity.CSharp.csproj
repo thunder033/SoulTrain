@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\SimpleJSON.cs" />
     <Compile Include="Assets\Scripts\Soul.cs" />
     <Compile Include="Assets\Scripts\Story.cs" />
+    <Compile Include="Assets\Scripts\TrainLoader.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />

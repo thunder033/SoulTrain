@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
 
     public static List<GameData> Saves { get; private set; } = new List<GameData>();
     static GameData current;
+    static string loadOnStart;
 
     public static string saveName = "/savedGames.gd";
 
@@ -27,9 +28,20 @@ public class Game : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-
-        Story.LoadStoryElements();
         Load();
+
+        if (loadOnStart != null)
+        {
+            try
+            {
+                LoadSave(loadOnStart);
+            }
+            catch(System.InvalidOperationException)
+            {
+                LoadSave(new GameData(loadOnStart));
+            }
+            
+        }
     }
 
     public static GameData LoadSave(string name)
@@ -77,6 +89,16 @@ public class Game : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + saveName);
         bf.Serialize(file, Saves);
         file.Close();
+    }
+
+    public static void LoadOnStart(GameData game)
+    {
+        loadOnStart = game.name;
+    }
+
+    public static void NewGame(string name)
+    {
+        loadOnStart = name;
     }
 }
 
