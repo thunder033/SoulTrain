@@ -14,8 +14,7 @@ public class Player_Move : MonoBehaviour {
 	float initialX;
 	float initialY;
 	float initialZ;
-	Vector3 forward;
-	float directionAngle;
+	float wave;
 
 	// Use this for initialization
 	void Start () {
@@ -58,21 +57,37 @@ public class Player_Move : MonoBehaviour {
 		if (Input.GetKey("w"))
 		{
 			distForward++;
-			transform.forward = new Vector3 (0, 0, 1);
+			wave++;
 		}
 		if (Input.GetKey("a"))
 		{
 			distRight--;
-			transform.forward = new Vector3 (-1, 0, 0);
+			wave++;
 		}
 		if (Input.GetKey("s"))
 		{
 			distForward--;
-			transform.forward = new Vector3 (0, 0, -1);
+			wave++;
 		}
 		if (Input.GetKey("d"))
 		{
 			distRight++;
+			wave++;
+		}
+		if (Input.GetKeyDown("w")) 
+		{
+			transform.forward = new Vector3 (0, 0, 1);
+		}
+		if (Input.GetKeyDown("a")) 
+		{
+			transform.forward = new Vector3 (-1, 0, 0);
+		}
+		if (Input.GetKeyDown("s")) 
+		{
+			transform.forward = new Vector3 (0, 0, -1);
+		}
+		if (Input.GetKeyDown("d")) 
+		{
 			transform.forward = new Vector3 (1, 0, 0);
 		}
 
@@ -89,7 +104,7 @@ public class Player_Move : MonoBehaviour {
 		acceleration = Vector3.zero;
 		*/
 
-		transform.position = new Vector3(initialX + distRight/5, initialY, initialZ + distForward/5);
+		transform.position = new Vector3(initialX + distRight/5, initialY + Mathf.Sin(wave*Mathf.PI/180), initialZ + distForward/5);
 		transform.rotation = Quaternion.LookRotation(transform.forward);
 		//transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
 	}
