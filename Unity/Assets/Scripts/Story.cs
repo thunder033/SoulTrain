@@ -7,7 +7,7 @@ using UnityEngine;
 public static class Story {
 
     static bool loaded = false;
-    static public string dataPath {get; } = "Assets/Resources/Data/";
+    static public string dataPath {get; } = Application.isEditor ? "Assets/Resources/Data/" : Application.dataPath + "/Resources/";
     static private Dictionary<Type, DataBin> elementLookup = new Dictionary<Type, DataBin>();
 
     static private DataBin[] dataLoaders = new DataBin[] 

@@ -26,6 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410430}
+  - 65: {fileID: 6548940}
   m_Layer: 0
   m_Name: longTable_SA
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.352107406, y: .0224662423, z: .435338616}
+  m_LocalPosition: {x: -12.7216759, y: -.575393558, z: 1.2764014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424470}
@@ -91,6 +92,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132054}
   m_Mesh: {fileID: 4300000, guid: aac7358737cc2fe409cedefa688f3ef7, type: 3}
+--- !u!65 &6548940
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.99860311, y: .819886684, z: 1}
+  m_Center: {x: -.49930191, y: .969446898, z: 0}
 --- !u!95 &9532402
 Animator:
   serializedVersion: 3

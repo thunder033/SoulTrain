@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491124}
+  - 65: {fileID: 6567474}
   m_Layer: 0
   m_Name: shortTable_SA
   m_TagString: Untagged
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.352107406, y: .0224662423, z: .435338616}
+  m_LocalPosition: {x: -15.482048, y: -.273475111, z: 3.89277482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420288}
@@ -91,6 +92,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176584}
   m_Mesh: {fileID: 4300000, guid: ea85be24661a2834c9e1d566525f150d, type: 3}
+--- !u!65 &6567474
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.15784264, z: 1}
+  m_Center: {x: 0, y: .761793137, z: 0}
 --- !u!95 &9588878
 Animator:
   serializedVersion: 3

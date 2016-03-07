@@ -24,7 +24,7 @@ public class Soul : MonoBehaviour, IStoryElement {
     private float speakingDistance = 5;
 
     // Use this for initialization
-    void Awake () {
+    void OnEnable () {
         conversations = new List<Conversation>();
     }
 	
@@ -35,7 +35,12 @@ public class Soul : MonoBehaviour, IStoryElement {
 
     public bool InSpeakingDistance(Soul soul)
     {
-        return (soul.transform.position - transform.position).magnitude <= speakingDistance;
+        if(soul == this)
+        {
+            return true;
+        }
+
+        return (float)((soul.transform.position - transform.position).magnitude) <= speakingDistance;
     }
 
     public Conversation Converse(Soul soul)
