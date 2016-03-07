@@ -9,7 +9,7 @@ public class Soul : MonoBehaviour, IStoryElement {
     Conversation defaultConvo;
     Conversation activeConvo;
 
-    List<Conversation> conversations { get; set; }
+    List<Conversation> conversations { get; set; } = new List<Conversation>();
     public Conversation.ResponseHandler HearResponse;
 
     [SerializeField]
@@ -22,11 +22,6 @@ public class Soul : MonoBehaviour, IStoryElement {
     }
 
     private float speakingDistance = 5;
-
-    // Use this for initialization
-    void Awake () {
-        conversations = new List<Conversation>();
-    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,7 +30,12 @@ public class Soul : MonoBehaviour, IStoryElement {
 
     public bool InSpeakingDistance(Soul soul)
     {
-        return (soul.transform.position - transform.position).magnitude <= speakingDistance;
+        if(soul == this)
+        {
+            return true;
+        }
+
+        return (float)((soul.transform.position - transform.position).magnitude) <= speakingDistance;
     }
 
     public Conversation Converse(Soul soul)

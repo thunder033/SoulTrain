@@ -88,7 +88,7 @@ public class DialogGUI : MonoBehaviour {
     {
         Soul closestSoul = FindObjectsOfType<Soul>()
             .Where(s => s != soul && s.InSpeakingDistance(soul))
-            .OrderBy(s => s.transform.position - soul.transform.position)
+            .OrderBy(s => (s.transform.position - soul.transform.position).magnitude)
             .First();
 
         if(closestSoul != null)

@@ -1,0 +1,227 @@
+Mono path[0] = 'M:/Documents/git/SoulTrain/Unity/NativeBuild/SoulTrain_Data/Managed'
+Mono path[1] = 'M:/Documents/git/SoulTrain/Unity/NativeBuild/SoulTrain_Data/Mono'
+Mono config path = 'M:/Documents/git/SoulTrain/Unity/NativeBuild/SoulTrain_Data/Mono/etc'
+PlayerConnection initialized from M:/Documents/git/SoulTrain/Unity/NativeBuild/SoulTrain_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55441
+Multi-casting "[IP] 10.59.9.139 [Port] 55441 [Flags] 3 [Guid] 1487299221 [EditorId] 1737166371 [Version] 1048832 [Id] WindowsPlayer(greg-pc) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [10.59.9.139:55441]...
+PlayerConnection accepted from [10.59.9.139] handle:0x280
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56221
+PlayerConnection already initialized - listening to [10.59.9.139:55441]
+Initialize engine version: 5.2.4f1 (98095704e6fe)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 650 Ti BOOST (ID=0x11c2)
+    Vendor:   NVIDIA
+    VRAM:     1988 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\AsyncBridge.Net35.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\AsyncBridge.Net35.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\System.Threading.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\System.Threading.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
+Loading M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.047 seconds
+desktop: 1920x1080 60Hz; virtual: 5760x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: M:\Documents\git\SoulTrain\Unity\NativeBuild\SoulTrain_Data\Managed\System.dll (this message is harmless)
+Loaded 3 Saves from C:/Users/Greg/AppData/LocalLow/DefaultCompany/SoulTrain
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Game:Load() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Game.cs:67)
+Game:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Game.cs:31)
+UnityEngine.Object:Internal_CloneSingle(Object)
+UnityEngine.Object:Instantiate(GameObject) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:95)
+Loader:Start() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Loader.cs:13)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Game.cs Line: 67)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 3c6d0 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.713335 ms
+Loaded Soul:0
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded Soul:1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded Soul:2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:0
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:3
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:4
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:5
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:6
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:7
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:8
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:9
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:10
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded DialogLine:11
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded Conversation:0
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+Loaded Conversation:1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Story:Import(DataBin) (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:30)
+Story:LoadStoryElements() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Story.cs:50)
+TrainLoader:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\TrainLoader.cs:9)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Story.cs Line: 30)
+
+System memory in use before: 22.4 MB.
+System memory in use after: 22.4 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 456.
+Total: 0.250149 ms (FindLiveObjects: 0.024576 ms CreateObjectMapping: 0.014043 ms MarkObjects: 0.200119 ms  DeleteObjects: 0.010825 ms)
+
+Loaded 3 Saves from C:/Users/Greg/AppData/LocalLow/DefaultCompany/SoulTrain
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Game:Load() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Game.cs:67)
+Game:Awake() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Game.cs:31)
+UnityEngine.Object:Internal_CloneSingle(Object)
+UnityEngine.Object:Instantiate(GameObject) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:95)
+Loader:Start() (at M:\Documents\git\SoulTrain\Unity\Assets\Scripts\Loader.cs:13)
+ 
+(Filename: M:/Documents/git/SoulTrain/Unity/Assets/Scripts/Game.cs Line: 67)
+
+Waiting for finish

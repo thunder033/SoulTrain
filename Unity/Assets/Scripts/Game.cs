@@ -64,12 +64,12 @@ public class Game : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + saveName, FileMode.Open);
             Saves = (List<GameData>)bf.Deserialize(file);
             file.Close();
-            Debug.Log("Loaded " + Saves.Count + " Saves");
+            Debug.Log("Loaded " + Saves.Count + " Saves from " + Application.persistentDataPath);
         }
 
         if (Saves.Count > 0)
         {
-            LoadSave(Saves[0]);
+            //LoadSave(Saves[0]);
         }
         else
         {
