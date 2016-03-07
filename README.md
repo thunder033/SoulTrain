@@ -1,5 +1,7 @@
 # SoulTrain
 
+**VS Tools for Unity** ***must*** be re-installed for the project to compile on a lab machine!
+
 ###Recommended Tools:
 - Visual Studio 2015
 - Unity 5.2(.4)

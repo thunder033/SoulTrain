@@ -43,6 +43,54 @@
     "id": "5",
     "text": "Let's go do it now!",
     "soulId": "1",
+    "responseIds": [ "6" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "6",
+    "text": "Wait let me ask Ed if he wants to join?",
+    "soulId": "0",
+    "responseIds": [ ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "7",
+    "text": "Hey Bob! What are you up to?",
+    "soulId": "2",
+    "responseIds": [ "8" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "8",
+    "text": "Nothing much...",
+    "soulId": "0",
+    "responseIds": [ "9", "10" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "9",
+    "text": " I'm just gonna punch Joe in the face!",
+    "soulId": "0",
+    "responseIds": [ "11" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "10",
+    "text": "Wanna join us for Tacos?",
+    "soulId": "0",
+    "responseIds": [ "11" ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+   {
+    "id": "11",
+    "text": "I'm not too sure about that, my stomach isn't feeling too goo after last time.",
+    "soulId": "2",
     "responseIds": [ ],
     "clueIds": [ ],
     "endPositions": [ ]

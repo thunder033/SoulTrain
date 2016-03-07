@@ -5,4 +5,11 @@
         "startDialogLineId": "0",
         "startPositions": [ ]
     }
+	
+	{
+		"id" : "7",
+		"soulIds": ["0", "2"],
+		"startDialogLineId" : "0",
+		"startPositions": []
+	}
 ]
