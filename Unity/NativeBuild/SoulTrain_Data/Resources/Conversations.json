@@ -1,0 +1,15 @@
+[
+    {
+        "id": "0",
+        "soulIds": [ "0", "1" ],
+        "startDialogLineId": "0",
+        "startPositions": [ ]
+    },
+	
+	{
+		"id" : "1",
+		"soulIds": ["0", "2"],
+		"startDialogLineId" : "7",
+		"startPositions": []
+	}
+]

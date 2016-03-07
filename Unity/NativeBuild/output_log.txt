@@ -1,2 +1,0 @@
-There should be 'SoulTrain_Data'
-folder next to the executable

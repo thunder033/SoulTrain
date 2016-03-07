@@ -17844,6 +17844,11 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
         <para>Enables/Disables mouse simulation with touches. By default this option is enabled.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Input.stylusTouchSupported">
+      <summary>
+        <para>Returns true when Stylus Touch is supported by a device or platform.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Input.touchCount">
       <summary>
         <para>Number of touches. Guaranteed not to change throughout the frame. (Read Only)</para>
@@ -28060,6 +28065,11 @@ Note that IgnoreLayerCollision will reset the trigger state of affected collider
         <para>Should the one-way collision behaviour be used?</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.PlatformEffector2D.useOneWayGrouping">
+      <summary>
+        <para>Ensures that all contacts controlled by the one-way behaviour act the same.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.PlatformEffector2D.useSideBounce">
       <summary>
         <para>Should bounce be used on the platform sides?</para>
@@ -37347,6 +37357,16 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
         <para>Structure describing the status of a finger touching the screen.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Touch.altitudeAngle">
+      <summary>
+        <para>Value of 0 radians indicates that the stylus is parallel to the surface, pi/2 indicates that it is perpendicular.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.azimuthAngle">
+      <summary>
+        <para>Value of 0 radians indicates that the stylus is pointed along the x-axis of the device.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Touch.deltaPosition">
       <summary>
         <para>The position delta since last change.</para>
@@ -37382,9 +37402,24 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
         <para>The current amount of pressure being applied to a touch.  1.0f is considered to be the pressure of an average touch.  If Input.touchPressureSupported returns false, the value of this property will always be 1.0f.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Touch.radius">
+      <summary>
+        <para>An estimated value of the radius of a touch.  Add radiusVariance to get the maximum touch size, subtract it to get the minimum touch size.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.radiusVariance">
+      <summary>
+        <para>The amount that the radius varies by for a touch.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Touch.tapCount">
       <summary>
         <para>Number of taps.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Touch.type">
+      <summary>
+        <para>A value that indicates whether a touch was of Direct, Indirect (or remote), or Stylus type.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.TouchPhase">
@@ -37584,6 +37619,26 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
     <member name="F:UnityEngine.TouchScreenKeyboardType.URL">
       <summary>
         <para>Keyboard optimized for URL entry.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.TouchType">
+      <summary>
+        <para>Describes whether a touch is direct, indirect (or remote), or from a stylus.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchType.Direct">
+      <summary>
+        <para>A direct touch on a device.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchType.Indirect">
+      <summary>
+        <para>An Indirect, or remote, touch on a device.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.TouchType.Stylus">
+      <summary>
+        <para>A touch from a stylus on a device.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.TrailRenderer">
