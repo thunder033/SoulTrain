@@ -26,6 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469942}
+  - 65: {fileID: 6595086}
   m_Layer: 0
   m_Name: dresser_SC
   m_TagString: Untagged
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.352107406, y: .0224662423, z: .435338616}
+  m_LocalPosition: {x: -9.32202435, y: -.14523983, z: -1.76400006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427068}
@@ -91,6 +92,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103306}
   m_Mesh: {fileID: 4300000, guid: 862530d4ea4e0ef48976fe625a7e2abf, type: 3}
+--- !u!65 &6595086
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.48353982, y: 1.88434553, z: .779483318}
+  m_Center: {x: 2.41635752, y: 1.00399137, z: 1.90894103}
 --- !u!95 &9588508
 Animator:
   serializedVersion: 3
