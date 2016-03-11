@@ -22,6 +22,6 @@ public class Loader : MonoBehaviour
 
     public void ContinueGame()
     {
-        Application.LoadLevel("Train");
+        Application.LoadLevel("LoadGame");
     }
 }
