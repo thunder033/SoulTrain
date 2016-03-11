@@ -249,6 +249,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d823a1ff110f4e842b2f32600fd9f1bc, type: 2}
   m_IsPrefabParent: 0
+--- !u!223 &724241389 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 22306216, guid: d823a1ff110f4e842b2f32600fd9f1bc,
+    type: 2}
+  m_PrefabInternal: {fileID: 406872355}
 --- !u!1 &1280260547
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069d04b097881c64b9bfc2d2157637e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadMenu: {fileID: 724241389}
+  savePanelPrefab: {fileID: 195814, guid: a2749dd950ee9ea43b511fc2ca347ec5, type: 2}
+  titleFieldName: GameSaveName
+  dateFieldName: GameSaveDate
 --- !u!4 &1455618655
 Transform:
   m_ObjectHideFlags: 0
