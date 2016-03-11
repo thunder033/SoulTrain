@@ -26,6 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467996}
+  - 65: {fileID: 6541468}
   m_Layer: 0
   m_Name: couch_SA
   m_TagString: Untagged
@@ -51,8 +52,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.352107406, y: .0224662423, z: .435338616}
+  m_LocalRotation: {x: 0, y: -.999999225, z: 0, w: -.00124375394}
+  m_LocalPosition: {x: -14.5, y: -.114739776, z: 3.88000011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418116}
@@ -92,6 +93,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103310}
   m_Mesh: {fileID: 4300000, guid: ac8a76cf1202a6b4bbaf359568628182, type: 3}
+--- !u!65 &6541468
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.39400244, y: .552261353, z: 1}
+  m_Center: {x: -1.5284605, y: .293417931, z: -1.00198667e-05}
 --- !u!95 &9545086
 Animator:
   serializedVersion: 3
