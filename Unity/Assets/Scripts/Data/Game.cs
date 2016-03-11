@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -60,11 +61,20 @@ public class Game : MonoBehaviour
     {
         if(File.Exists(Application.persistentDataPath + saveName))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + saveName, FileMode.Open);
-            Saves = (List<GameData>)bf.Deserialize(file);
-            file.Close();
-            Debug.Log("Loaded " + Saves.Count + " Saves from " + Application.persistentDataPath);
+
+            try
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(Application.persistentDataPath + saveName, FileMode.Open);
+                Saves = (List<GameData>)bf.Deserialize(file);
+                file.Close();
+                Debug.Log("Loaded " + Saves.Count + " Saves from " + Application.persistentDataPath);
+            }
+            catch(SerializationException ex)
+            {
+                Debug.LogError(ex);
+                //TODO: Handle serializaton exception
+            }
         }
 
         if (Saves.Count > 0)
