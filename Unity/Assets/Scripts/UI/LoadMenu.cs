@@ -21,8 +21,6 @@ public class LoadMenu : MonoBehaviour {
             {
                 GameData save = Game.Saves[i];
                 savePanel.GetComponent<SaveOption>().SetGameData(save);
-                savePanel.transform.Find(titleFieldName).GetComponent<Text>().text = save.name;
-                savePanel.transform.Find(dateFieldName).GetComponent<Text>().text = string.Format("{0:M/d/yyyy HH:mm tt}", save.getLastSaved());
             }
 
             savePanel.transform.SetParent(loadMenu.transform);

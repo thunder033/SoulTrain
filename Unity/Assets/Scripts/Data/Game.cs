@@ -101,6 +101,11 @@ public class Game : MonoBehaviour
         file.Close();
     }
 
+    public static void DeleteSave(GameData game)
+    {
+        Saves.Remove(game);
+    }
+
     public static void LoadOnStart(GameData game)
     {
         loadOnStart = game.name;
