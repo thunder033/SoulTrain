@@ -14,20 +14,19 @@ public class LoadMenu : MonoBehaviour {
 	void Start () {
         for (int i = 0; i < 3; i++)
         {
+            
+            GameObject savePanel = Instantiate(savePanelPrefab);
+
             if (i < Game.Saves.Count)
             {
                 GameData save = Game.Saves[i];
-                GameObject savePanel = Instantiate(savePanelPrefab);
+                savePanel.GetComponent<SaveOption>().SetGameData(save);
                 savePanel.transform.Find(titleFieldName).GetComponent<Text>().text = save.name;
                 savePanel.transform.Find(dateFieldName).GetComponent<Text>().text = string.Format("{0:M/d/yyyy HH:mm tt}", save.getLastSaved());
-                savePanel.transform.SetParent(loadMenu.transform);
-                savePanel.GetComponent<Image>().rectTransform.anchoredPosition = new Vector2(0, 70 - 70 * i);
             }
-            else
-            {
 
-            }
-            
+            savePanel.transform.SetParent(loadMenu.transform);
+            savePanel.GetComponent<Image>().rectTransform.anchoredPosition = new Vector2(0, 70 - 70 * i);
         }
 	}
 	
