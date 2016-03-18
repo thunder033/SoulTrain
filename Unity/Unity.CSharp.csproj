@@ -93,11 +93,11 @@
     <Compile Include="Assets\Scripts\UI\DialogGUI.cs" />
     <Compile Include="Assets\Scripts\UI\FixedCamera.cs" />
     <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\Loader.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\UI\SaveOption.cs" />
-    <Compile Include="Assets\Scripts\UI\SimpleJSON.cs" />
+    <Compile Include="Assets\Scripts\UI\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\UI\TrainLoader.cs" />
+    <Compile Include="Assets\Scripts\Utility\SimpleJSON.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
