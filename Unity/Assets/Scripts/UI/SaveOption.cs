@@ -10,11 +10,11 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
     GameData _save;
     Selectable select;
 
-    public string titleFieldName;
-    public string dateFieldName;
-    public string saveActionName;
-    public string deleteActionName;
-    public string nameInputName;
+    public Text titleField;
+    public Text dateField;
+    public Button loadControl;
+    public Button deleteControl;
+    public InputField nameInput;
 
     float selectTimeOut = .1f;
     float selectTimer = 0;
@@ -25,17 +25,16 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
     void Start () {
         select = GetComponent<Selectable>();
 
-        if(_save == null)
+        if (_save == null)
         {
-            transform.Find(titleFieldName).GetComponent<Text>().text = "New Game";
-            transform.Find(dateFieldName).GetComponent<Text>().text = "";
+            titleField.text = "New Game";
+            dateField.text = "";
         }
 
-        transform.Find(saveActionName).gameObject.SetActive(false);
-        transform.Find(saveActionName).GetComponent<Button>().onClick.AddListener(() => LoadGame());
-
-        transform.Find(deleteActionName).gameObject.SetActive(false);
-        transform.Find(deleteActionName).GetComponent<Button>().onClick.AddListener(() => DeleteGame());
+        dateField.gameObject.SetActive(_save != null);
+        loadControl.onClick.AddListener(() => LoadGame());
+        deleteControl.gameObject.SetActive(false);
+        deleteControl.onClick.AddListener(() => DeleteGame());
 
     }
 	
@@ -47,8 +46,8 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
         }
         else if(!selected)
         {
-            transform.Find(saveActionName).gameObject.SetActive(false);
-            transform.Find(deleteActionName).gameObject.SetActive(false);
+            loadControl.gameObject.SetActive(false);
+            deleteControl.gameObject.SetActive(false);
             GetComponent<Selectable>().interactable = true;
         }
 	}
@@ -56,16 +55,18 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
     public void SetGameData(GameData save)
     {
         _save = save;
-        transform.Find(titleFieldName).GetComponent<Text>().text = save.name;
-        transform.Find(dateFieldName).GetComponent<Text>().text = string.Format("{0:M/d/yyyy HH:mm tt}", save.getLastSaved());
+        titleField.text = save.name;
+
+        dateField.gameObject.SetActive(true);
+        dateField.text = string.Format("{0:M/d/yyyy HH:mm tt}", save.getLastSaved());
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        GameObject saveAction = transform.Find(saveActionName).gameObject;
-        transform.Find(deleteActionName).gameObject.SetActive(_save != null);
-        saveAction.SetActive(true);
-        saveAction.GetComponentInChildren<Text>().text = _save == null ? "Start Game" : "Continue";
+        deleteControl.gameObject.SetActive(_save != null);
+        nameInput.gameObject.SetActive(_save == null);
+        loadControl.gameObject.SetActive(true);
+        loadControl.gameObject.GetComponentInChildren<Text>().text = _save == null ? "Start Game" : "Continue";
         selected = true;
     }
 
@@ -84,12 +85,16 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
         }
         else
         {
-            string name = transform.Find(nameInputName).GetComponent<InputField>().text;
+            string name = nameInput.text;
 
-            if(name.Length > 0)
+            if(name.Length > 0 && !Game.SaveExists(name))
             {
-                Game.NewGame("newGame-" + System.DateTime.UtcNow.ToString());
+                Game.NewGame(name);
                 Application.LoadLevel("Train");
+            }
+            else
+            {
+                //nameInput.GetComponent<InputField>().colors.normalColor = Color.red;
             }
         }
     }
@@ -101,8 +106,8 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
             Game.DeleteSave(_save);
             Game.Save();
 
-            transform.Find(titleFieldName).GetComponent<Text>().text = "New Game";
-            transform.Find(dateFieldName).GetComponent<Text>().text = "";
+            titleField.text = "New Game";
+            dateField.text = "";
             _save = null;
         }
     }

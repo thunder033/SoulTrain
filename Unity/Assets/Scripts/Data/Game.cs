@@ -45,6 +45,11 @@ public class Game : MonoBehaviour
         }
     }
 
+    public static bool SaveExists(string name)
+    {
+        return Saves.Where(save => save.name == name).Count() > 0;
+    }
+
     public static GameData LoadSave(string name)
     {
         return LoadSave(Saves.Where(save => save.name == name).First());
