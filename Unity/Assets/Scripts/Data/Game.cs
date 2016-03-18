@@ -89,12 +89,15 @@ public class Game : MonoBehaviour
 
     public static void Save()
     {
-        current.Save();
-        if(!Saves.Contains(current))
+        if(current != null)
         {
-            Saves.Add(current);
+            current.Save();
+            if (!Saves.Contains(current))
+            {
+                Saves.Add(current);
+            }
         }
-
+        
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + saveName);
         bf.Serialize(file, Saves);
