@@ -14,6 +14,7 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
     public string dateFieldName;
     public string saveActionName;
     public string deleteActionName;
+    public string nameInputName;
 
     float selectTimeOut = .1f;
     float selectTimer = 0;
@@ -83,8 +84,13 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
         }
         else
         {
-            Game.NewGame("newGame-" + System.DateTime.UtcNow.ToString());
-            Application.LoadLevel("Train");
+            string name = transform.Find(nameInputName).GetComponent<InputField>().text;
+
+            if(name.Length > 0)
+            {
+                Game.NewGame("newGame-" + System.DateTime.UtcNow.ToString());
+                Application.LoadLevel("Train");
+            }
         }
     }
 
