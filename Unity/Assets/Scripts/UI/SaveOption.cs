@@ -2,10 +2,12 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Linq;
 using System;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Selectable))]
-public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
+public class SaveOption : MonoBehaviour, ISelectHandler {
 
     GameData _save;
     Selectable select;
@@ -20,6 +22,9 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
     float selectTimer = 0;
     bool selected = false;
 
+    bool callout = false;
+    float calloutTimeOut = .75f;
+    float calloutTimer = 0;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +38,7 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
 
         dateField.gameObject.SetActive(_save != null);
         loadControl.onClick.AddListener(() => LoadGame());
+        nameInput.onEndEdit.AddListener(e => titleField.text = nameInput.text);
         deleteControl.gameObject.SetActive(false);
         deleteControl.onClick.AddListener(() => DeleteGame());
 
@@ -46,11 +52,29 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
         }
         else if(!selected)
         {
-            loadControl.gameObject.SetActive(false);
-            deleteControl.gameObject.SetActive(false);
-            GetComponent<Selectable>().interactable = true;
+            Deactivate();
         }
+
+        if (calloutTimer > 0)
+        {
+            calloutTimer -= Time.deltaTime;
+            callout = true;
+        }
+        else if(callout)
+        {
+            setInputColor(Color.white);
+            callout = false;
+        }
+        
 	}
+
+    void setInputColor(Color color)
+    {
+        //Call the copy constructor on the color block
+        ColorBlock inputColors = nameInput.colors;
+        inputColors.normalColor = color;
+        nameInput.colors = inputColors;
+    }
 
     public void SetGameData(GameData save)
     {
@@ -68,12 +92,22 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
         loadControl.gameObject.SetActive(true);
         loadControl.gameObject.GetComponentInChildren<Text>().text = _save == null ? "Start Game" : "Continue";
         selected = true;
+
+        var saveOptions = new List<Selectable>(Selectable.allSelectables.Where(s => s.GetComponent<SaveOption>() != null));
+        for (int i = 0; i < saveOptions.Count(); i++)
+        {
+            if(saveOptions[i] != GetComponent<Selectable>())
+            {
+                saveOptions[i].gameObject.GetComponent<SaveOption>().Deactivate();
+            }
+        }
     }
 
-    public void OnDeselect(BaseEventData eventData)
+    public void Deactivate()
     {
-        selected = false;
-        selectTimer = selectTimeOut;
+        loadControl.gameObject.SetActive(false);
+        deleteControl.gameObject.SetActive(false);
+        nameInput.gameObject.SetActive(false);
     }
 
     public void LoadGame()
@@ -94,7 +128,8 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
             }
             else
             {
-                //nameInput.GetComponent<InputField>().colors.normalColor = Color.red;
+                setInputColor(Color.red);
+                calloutTimer = calloutTimeOut;
             }
         }
     }
@@ -109,6 +144,8 @@ public class SaveOption : MonoBehaviour, ISelectHandler, IDeselectHandler {
             titleField.text = "New Game";
             dateField.text = "";
             _save = null;
+
+            Deactivate();
         }
     }
 }
