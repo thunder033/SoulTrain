@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class LoadMenu : MonoBehaviour {
@@ -17,9 +18,10 @@ public class LoadMenu : MonoBehaviour {
             
             GameObject savePanel = Instantiate(savePanelPrefab);
 
-            if (i < Game.Saves.Count)
+            List<GameData> savesList = new List<GameData>(Game.Saves.Values);
+            if (i < savesList.Count)
             {
-                GameData save = Game.Saves[i];
+                GameData save = savesList[i];
                 savePanel.GetComponent<SaveOption>().SetGameData(save);
             }
 

@@ -108,13 +108,14 @@ public class SaveOption : MonoBehaviour, ISelectHandler {
         loadControl.gameObject.SetActive(false);
         deleteControl.gameObject.SetActive(false);
         nameInput.gameObject.SetActive(false);
+        titleField.gameObject.SetActive(true);
     }
 
     public void LoadGame()
     {
         if(_save != null)
         {
-            Game.LoadSave(_save);
+            Game.LoadSave(_save.name);
             Application.LoadLevel("Train");
         }
         else
