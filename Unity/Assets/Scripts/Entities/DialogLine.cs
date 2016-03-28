@@ -8,6 +8,7 @@ public class DialogLine : StoryElement
 {
     public Soul speaker;
     private string[] responseIDs;
+    private string[] clueIDs;
     public string text;
 
     public bool IsLastLine
@@ -34,14 +35,24 @@ public class DialogLine : StoryElement
         text = aText;
     }
 
-    public void SetReponseIDs(string[] aResponseIds)
+    public void SetReponseIDs(string[] responseIDs)
     {
-        responseIDs = aResponseIds;
+        this.responseIDs = responseIDs;
+    }
+
+    public void SetClueIDs(string[] clueIDs)
+    {
+        this.clueIDs = clueIDs;
     }
 
     public List<DialogLine> GetResponses()
     {
         return new List<DialogLine>(Story.GetElements<DialogLine>(responseIDs));
+    }
+
+    public List<Clue> GetClues()
+    {
+        return new List<Clue>(Story.GetElements<Clue>(clueIDs));
     }
 
     public List<DialogLine> GetResponses(Soul soul)
@@ -69,6 +80,7 @@ public class DialogLoader : DataBin
     {
         DialogLine line = new DialogLine(data["id"], data["text"], data["soulId"]);
         line.SetReponseIDs(ToStringArray(data["responseIds"].AsArray));
+        line.SetClueIDs(ToStringArray(data["clueIds"].AsArray));
         AddInstance(line);
         return line;
     }

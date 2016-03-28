@@ -1,6 +1,7 @@
 ﻿using SimpleJSON;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Conversation : StoryElement
 {
@@ -70,6 +71,7 @@ public class Conversation : StoryElement
     {
         CurrentLine = line;
         possibleResponses = line.GetResponses();
+        line.GetClues().ForEach(clue => clue.Reveal());
 
         if(possibleResponses.Count == 0)
         {
