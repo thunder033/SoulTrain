@@ -31,4 +31,9 @@ public class GameData {
 
         lastSaved = DateTime.Now;
     }
+
+    public DateTime getLastSaved()
+    {
+        return lastSaved;
+    }
 }

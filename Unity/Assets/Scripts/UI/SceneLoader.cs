@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Loader : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     public GameObject game;
 
@@ -22,6 +22,6 @@ public class Loader : MonoBehaviour
 
     public void ContinueGame()
     {
-        Application.LoadLevel("Train");
+        Application.LoadLevel("LoadGame");
     }
 }

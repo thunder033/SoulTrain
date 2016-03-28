@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: .122000001}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -847,10 +847,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!1 &1291808014 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 162954, guid: 9db2b04ba7a8deb4482be57a24ac7cf8, type: 2}
-  m_PrefabInternal: {fileID: 179004634}
 --- !u!114 &1291808015 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11490182, guid: 9db2b04ba7a8deb4482be57a24ac7cf8,
@@ -914,12 +910,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1291808014}
-        m_MethodName: 
+      - m_Target: {fileID: 1291808015}
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

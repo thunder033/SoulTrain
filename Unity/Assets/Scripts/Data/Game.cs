@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -8,7 +9,7 @@ public class Game : MonoBehaviour
 {
     public static Game Instance { get; private set; }
 
-    public static List<GameData> Saves { get; private set; } = new List<GameData>();
+    public static Dictionary<string, GameData> Saves { get; private set; } = new Dictionary<string, GameData>();
     static GameData current;
     static string loadOnStart;
 
@@ -23,7 +24,7 @@ public class Game : MonoBehaviour
 
         else if (Instance != this)
 
-            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a Game.
             Destroy(gameObject);
 
         //Sets this to not be destroyed when reloading scene
@@ -44,9 +45,14 @@ public class Game : MonoBehaviour
         }
     }
 
+    public static bool SaveExists(string name)
+    {
+        return Saves.ContainsKey(name);
+    }
+
     public static GameData LoadSave(string name)
     {
-        return LoadSave(Saves.Where(save => save.name == name).First());
+        return LoadSave(Saves[name]);
     }
 
     public static GameData LoadSave(GameData game)
@@ -56,15 +62,35 @@ public class Game : MonoBehaviour
         return current;
     }
 
+    public static void ReloadSave()
+    {
+        Story.LoadGame(current);
+    }
+
     public static void Load()
     {
         if(File.Exists(Application.persistentDataPath + saveName))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + saveName, FileMode.Open);
-            Saves = (List<GameData>)bf.Deserialize(file);
-            file.Close();
-            Debug.Log("Loaded " + Saves.Count + " Saves from " + Application.persistentDataPath);
+
+            try
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(Application.persistentDataPath + saveName, FileMode.Open);
+                List<GameData> SavesList = (List<GameData>)bf.Deserialize(file);
+                file.Close();
+
+                foreach(GameData save in SavesList)
+                {
+                    if (!SaveExists(save.name))
+                        Saves.Add(save.name, save);
+                }
+                Debug.Log("Loaded " + Saves.Count + " Saves from " + Application.persistentDataPath);
+            }
+            catch(SerializationException ex)
+            {
+                Debug.LogError(ex);
+                //TODO: Handle serializaton exception
+            }
         }
 
         if (Saves.Count > 0)
@@ -79,16 +105,25 @@ public class Game : MonoBehaviour
 
     public static void Save()
     {
-        current.Save();
-        if(!Saves.Contains(current))
+        if(current != null)
         {
-            Saves.Add(current);
+            current.Save();
+            if (!SaveExists(current.name))
+            {
+                Saves.Add(current.name, current);
+            }
         }
-
+        
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + saveName);
-        bf.Serialize(file, Saves);
+        List<GameData> savesList = new List<GameData>(Saves.Values);
+        bf.Serialize(file, savesList);
         file.Close();
+    }
+
+    public static void DeleteSave(GameData game)
+    {
+        Saves.Remove(game.name);
     }
 
     public static void LoadOnStart(GameData game)

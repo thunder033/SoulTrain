@@ -2,10 +2,11 @@
 using System.Collections;
 
 
-public class TrainLoader : Loader
+public class TrainLoader : SceneLoader
 {
     public void Awake()
     {
         Story.LoadStoryElements();
+        Game.ReloadSave();
     }
 }
