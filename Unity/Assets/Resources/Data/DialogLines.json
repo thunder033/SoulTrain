@@ -87,10 +87,26 @@
     "clueIds": [ ],
     "endPositions": [ ]
   },
-   {
+  {
     "id": "11",
     "text": "I'm not too sure about that, my stomach isn't feeling too goo after last time.",
     "soulId": "2",
+    "responseIds": [ ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+  {
+    "id": "12",
+    "text": "I have nothing else to say.",
+    "soulId": "2",
+    "responseIds": [ ],
+    "clueIds": [ ],
+    "endPositions": [ ]
+  },
+    {
+    "id": "13",
+    "text": "What are you looking at?",
+    "soulId": "1",
     "responseIds": [ ],
     "clueIds": [ ],
     "endPositions": [ ]
