@@ -12,7 +12,7 @@
     "text": "Hi Bob!",
     "soulId": "1",
     "responseIds": [ "2", "3" ],
-    "clueIds": [ ],
+    "clueIds": [ "0" ],
     "endPositions": [ ]
   },
   {
@@ -44,7 +44,7 @@
     "text": "Let's go do it now!",
     "soulId": "1",
     "responseIds": [ "6" ],
-    "clueIds": [ ],
+    "clueIds": [ "1" ],
     "endPositions": [ ]
   },
   {
@@ -92,7 +92,7 @@
     "text": "I'm not too sure about that, my stomach isn't feeling too goo after last time.",
     "soulId": "2",
     "responseIds": [ ],
-    "clueIds": [ ],
+    "clueIds": [ "2" ],
     "endPositions": [ ]
   },
   {

@@ -14,7 +14,9 @@ public static class Story {
     {
         new SoulLoader(),
         new DialogLoader(),
-        new ConversationLoader()
+        new ConversationLoader(),
+        new ClueBin(),
+        new MysteryBin()
     };
 
     public static JSONNode Import(DataBin loader)

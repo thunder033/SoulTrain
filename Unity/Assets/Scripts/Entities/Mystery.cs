@@ -67,7 +67,7 @@ public class Mystery : StoryElement {
 
 public class MysteryBin : DataBin
 {
-    public override string fileName { get; protected set; } = "Mystries.json";
+    public override string fileName { get; protected set; } = "Mysteries.json";
     public override Type DataType { get; protected set; } = typeof(Mystery);
 
     public override IStoryElement FromJSON(JSONNode data)
@@ -81,6 +81,7 @@ public class MysteryBin : DataBin
             FirstClue = Story.GetElementById<Clue>(data["firstClueId"])
         };
 
+        AddInstance(mystery);
         return mystery;
     }
 }

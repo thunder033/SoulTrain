@@ -35,7 +35,15 @@ public abstract class DataBin
 
     public object GetByID(string id)
     {
-        return elementMap[id];
+        try
+        {
+            return elementMap[id];
+        }
+        catch(Exception)
+        {
+            return null;
+        }
+        
     }
 
     protected void AddInstance(IStoryElement element)

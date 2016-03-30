@@ -10,6 +10,8 @@ public class Clue : StoryElement {
     public string Text { get; private set; }
     public string Hint { get; private set; }
 
+    public bool Discovered { get; private set; }
+
     private Clue _previousClue;
 
     public Clue PreviousClue
@@ -55,7 +57,8 @@ public class Clue : StoryElement {
 
     public void Reveal()
     {
-
+        Discovered = true;
+        Debug.Log("Discovered " + Name);
     }
 }
 
@@ -70,7 +73,9 @@ public class ClueBin : DataBin
         Clue clue = new Clue(data["id"], data["name"], data["text"], data["hint"]);
         clue.NextClue = Story.GetElementById<Clue>(data["nextClueId"]);
         clue.PreviousClue = Story.GetElementById<Clue>(data["prevClueId"]);
+        clue.soulIDs = ToStringArray(data["soulsOfInterestIds"].AsArray);
 
+        AddInstance(clue);
         return clue;
     }
 }
