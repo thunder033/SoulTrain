@@ -37,7 +37,7 @@ public class Game : MonoBehaviour
             {
                 LoadSave(loadOnStart);
             }
-            catch(System.InvalidOperationException)
+            catch(KeyNotFoundException)
             {
                 LoadSave(new GameData(loadOnStart));
             }
@@ -60,11 +60,6 @@ public class Game : MonoBehaviour
         current = game;
         Story.LoadGame(current);
         return current;
-    }
-
-    public static void ReloadSave()
-    {
-        Story.LoadGame(current);
     }
 
     public static void Load()
