@@ -115,7 +115,7 @@ public class SaveOption : MonoBehaviour, ISelectHandler {
     {
         if(_save != null)
         {
-            Game.LoadSave(_save.name);
+            Game.LoadOnStart(_save);
             Application.LoadLevel("Train");
         }
         else

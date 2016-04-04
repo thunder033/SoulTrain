@@ -1,0 +1,12 @@
+[
+  {
+    "id": "0",
+    "name": "Location of Me",
+    "description": "I'm on a Train",
+    "itemIds": [ ],
+    "hint": "Look Around",
+    "prevClueId": "",
+    "nextClueId": "1",
+    "soulsOfInterestIds": [ "1" ]
+  }
+]

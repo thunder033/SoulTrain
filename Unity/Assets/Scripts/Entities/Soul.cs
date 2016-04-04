@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class Soul : MonoBehaviour, IStoryElement {
 
-    Conversation defaultConvo;
+    public string defaultConverstationID;
     Conversation activeConvo;
 
     List<Conversation> conversations { get; set; } = new List<Conversation>();
@@ -47,7 +47,7 @@ public class Soul : MonoBehaviour, IStoryElement {
         {
             if(index == conversations.Count)
             {
-                nextConvo = defaultConvo;
+                nextConvo = Story.GetElementById<Conversation>(defaultConverstationID);
                 break;
             }
             nextConvo = conversations[index++];
