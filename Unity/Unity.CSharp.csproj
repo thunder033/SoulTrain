@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Entities\Soul.cs" />
     <Compile Include="Assets\Scripts\UI\DialogGUI.cs" />
     <Compile Include="Assets\Scripts\UI\FixedCamera.cs" />
+    <Compile Include="Assets\Scripts\UI\Journal.cs" />
     <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\UI\SaveOption.cs" />
