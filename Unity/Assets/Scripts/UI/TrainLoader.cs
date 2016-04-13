@@ -21,4 +21,14 @@ public class TrainLoader : SceneLoader
         if(Input.GetKeyDown(KeyCode.R))
             journal.Open();
     }
+
+    public void ExitToMenu()
+    {
+        Application.LoadLevel("Menu");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

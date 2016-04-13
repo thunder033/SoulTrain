@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Journal : MonoBehaviour {
 
@@ -12,11 +13,13 @@ public class Journal : MonoBehaviour {
     Dictionary<Section, GameObject> sections;
 	// Use this for initialization
 	void Start () {
-        gameObject.SetActive(false);
-
+        //index the journal sections
         sections = new Dictionary<Section, GameObject>();
         sections.Add(Section.Mysteries, GameObject.Find(Section.Mysteries.ToString()));
         sections.Add(Section.PauseMenu, GameObject.Find(Section.PauseMenu.ToString()));
+
+        //Hide the journal
+        gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -34,9 +37,10 @@ public class Journal : MonoBehaviour {
     public void Open()
     {
         gameObject.SetActive(true);
+        OpenSection(Section.PauseMenu);
     }
 
-    void Close()
+    public void Close()
     {
         gameObject.SetActive(false);
     }
