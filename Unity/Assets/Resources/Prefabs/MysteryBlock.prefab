@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f307327ac9513884488421c4107b6922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleText: {fileID: 11475808}
 --- !u!114 &11475808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,7 +234,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: titleText
+      value: 
+      objectReference: {fileID: 11475808}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172630}
