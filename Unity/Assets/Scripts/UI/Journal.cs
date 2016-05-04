@@ -4,9 +4,10 @@ using System;
 
 public class Journal : MonoBehaviour {
 
-    enum Section {
+    public enum Section {
         Mysteries,
-        PauseMenu
+        PauseMenu,
+        MysteryPage
     }
 
     Dictionary<Section, GameObject> sections;
@@ -16,6 +17,7 @@ public class Journal : MonoBehaviour {
         sections = new Dictionary<Section, GameObject>();
         sections.Add(Section.Mysteries, GameObject.Find(Section.Mysteries.ToString()));
         sections.Add(Section.PauseMenu, GameObject.Find(Section.PauseMenu.ToString()));
+        sections.Add(Section.MysteryPage, GameObject.Find(Section.MysteryPage.ToString()));
 
         //Hide the journal
         gameObject.SetActive(false);
@@ -42,7 +44,11 @@ public class Journal : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    void OpenSection(Section name) {
+    public GameObject GetSection(Section name) {
+        return sections[name];
+    }
+
+    public void OpenSection(Section name) {
         foreach (GameObject section in sections.Values) {
             section.SetActive(false);
         }
@@ -50,11 +56,11 @@ public class Journal : MonoBehaviour {
         sections[name].SetActive(true);
         IPage page = sections[name].GetComponent<IPage>();
         if (page != null) {
-            page.OnLoad();
+            page.OnLoad(this);
         }
     }
 }
 
 public interface IPage {
-    void OnLoad();
+    void OnLoad(Journal journal);
 }
