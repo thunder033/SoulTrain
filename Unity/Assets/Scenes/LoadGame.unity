@@ -266,8 +266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadMenu: {fileID: 724241389}
   savePanelPrefab: {fileID: 195814, guid: a2749dd950ee9ea43b511fc2ca347ec5, type: 2}
-  titleFieldName: GameSaveName
-  dateFieldName: GameSaveDate
 --- !u!4 &1455618655
 Transform:
   m_ObjectHideFlags: 0

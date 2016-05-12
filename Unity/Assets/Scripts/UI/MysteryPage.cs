@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -6,6 +7,8 @@ public class MysteryPage : MonoBehaviour, IPage {
 
     Mystery mystery;
     Journal journal;
+
+    public Text mysteryTitle;
 
     // Use this for initialization
     void Start () {
@@ -23,5 +26,7 @@ public class MysteryPage : MonoBehaviour, IPage {
 
     public void SetMystery(Mystery mystery) {
         this.mystery = mystery;
+
+        mysteryTitle.text = mystery.Name;
     }
 }

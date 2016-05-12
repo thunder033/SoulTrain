@@ -31,5 +31,7 @@ public class MysteriesPage : MonoBehaviour, IPage {
 
     public void ViewMystery(Mystery mystery) {
         journal.OpenSection(Journal.Section.MysteryPage);
+        MysteryPage page = journal.GetSection(Journal.Section.MysteryPage).GetComponent<MysteryPage>();
+        page.SetMystery(mystery);
     }
 }
