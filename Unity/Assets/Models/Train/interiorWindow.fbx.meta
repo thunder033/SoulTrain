@@ -1,25 +1,69 @@
 fileFormatVersion: 2
-guid: 23c8e698463dbdf4c999a9c54ea710b5
-timeCreated: 1458232102
+guid: e2a194e4f18b2f74eb338d0efd2861fc
+timeCreated: 1463103530
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube1
-    100004: pPipe1
-    100006: pPipe2
-    100008: transform1
-    100010: transform2
-    400000: //RootNode
-    400002: pCube1
-    400004: pPipe1
-    400006: pPipe2
-    400008: transform1
-    400010: transform2
-    2300000: pPipe2
-    3300000: pPipe2
-    4300000: pPipe2
+    100000: interiorEnd_0005:interiorMid2:InteriorWindow
+    100002: interiorEnd_0005:interiorMid2:pCube1
+    100004: interiorEnd_0005:interiorMid2:pPipe1
+    100006: interiorEnd_0005:interiorMid2:pPipe2
+    100008: interiorEnd_0005:interiorMid2:pPipe3
+    100010: interiorEnd_0005:interiorMid2:transform1
+    100012: interiorEnd_0005:interiorMid2:transform2
+    100014: interiorEnd_0005:interiorMid2:transform3
+    100016: interiorEnd_0005:interiorMid2:transform4
+    100018: interiorEnd_0005:interiorMid2:transform5
+    100020: interiorEnd_0005:interiorMid2:transform6
+    100022: interiorEnd_0005:pCube1
+    100024: interiorEnd_0005:polySurface1
+    100026: interiorEnd_0005:polySurface1 1
+    100028: interiorEnd_0005:polySurface2
+    100030: interiorEnd_0005:pPipe1
+    100032: interiorEnd_0005:pPipe2
+    100034: interiorEnd_0005:transform1
+    100036: interiorEnd_0005:transform2
+    100038: interiorEnd_0005:transform3
+    100040: interiorEnd_0005:transform4
+    100042: interiorEnd_0005:transform5
+    100044: //RootNode
+    100046: pCube1
+    100048: pPipe1
+    100050: pPipe2
+    100052: transform1
+    100054: transform2
+    400000: interiorEnd_0005:interiorMid2:InteriorWindow
+    400002: interiorEnd_0005:interiorMid2:pCube1
+    400004: interiorEnd_0005:interiorMid2:pPipe1
+    400006: interiorEnd_0005:interiorMid2:pPipe2
+    400008: interiorEnd_0005:interiorMid2:pPipe3
+    400010: interiorEnd_0005:interiorMid2:transform1
+    400012: interiorEnd_0005:interiorMid2:transform2
+    400014: interiorEnd_0005:interiorMid2:transform3
+    400016: interiorEnd_0005:interiorMid2:transform4
+    400018: interiorEnd_0005:interiorMid2:transform5
+    400020: interiorEnd_0005:interiorMid2:transform6
+    400022: interiorEnd_0005:pCube1
+    400024: interiorEnd_0005:polySurface1
+    400026: interiorEnd_0005:polySurface1 1
+    400028: interiorEnd_0005:polySurface2
+    400030: interiorEnd_0005:pPipe1
+    400032: interiorEnd_0005:pPipe2
+    400034: interiorEnd_0005:transform1
+    400036: interiorEnd_0005:transform2
+    400038: interiorEnd_0005:transform3
+    400040: interiorEnd_0005:transform4
+    400042: interiorEnd_0005:transform5
+    400044: //RootNode
+    400046: pCube1
+    400048: pPipe1
+    400050: pPipe2
+    400052: transform1
+    400054: transform2
+    2300000: interiorEnd_0005:interiorMid2:InteriorWindow
+    3300000: interiorEnd_0005:interiorMid2:InteriorWindow
+    4300000: interiorEnd_0005:interiorMid2:InteriorWindow
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -44,7 +88,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2.5
+    globalScale: 2.4000001
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

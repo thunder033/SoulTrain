@@ -118,7 +118,10 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
      <None Include="Assets\CSharp 6.0 Support\AsyncTools\Plugins\System.Threading.xml" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -135,35 +138,38 @@
  <Reference Include="UnityEditor.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="AsyncBridge.Net35">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/AsyncBridge.Net35.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/AsyncBridge.Net35.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/System.Threading.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/System.Threading.dll</HintPath>
  </Reference>
  <Reference Include="CSharp60Support">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/CSharp 6.0 Support/Editor/CSharp60Support.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/CSharp 6.0 Support/Editor/CSharp60Support.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/Scripts/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/Scripts/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Mdb">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="nunit.core">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
  </Reference>
  <Reference Include="nunit.core.interfaces">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
