@@ -49,20 +49,26 @@
      <Compile Include="Assets\CSharp 6.0 Support\AsyncTools\UnityScheduler.cs" />
      <Compile Include="Assets\CSharp 6.0 Support\AsyncTools\UnitySynchronizationContext.cs" />
      <Compile Include="Assets\CSharp 6.0 Support\AsyncTools\UnityTaskScheduler.cs" />
-     <Compile Include="Assets\Scripts\Conversation.cs" />
-     <Compile Include="Assets\Scripts\DataBin.cs" />
-     <Compile Include="Assets\Scripts\DialogGUI.cs" />
-     <Compile Include="Assets\Scripts\DialogLine.cs" />
-     <Compile Include="Assets\Scripts\Game.cs" />
-     <Compile Include="Assets\Scripts\GameData.cs" />
-     <Compile Include="Assets\Scripts\Item.cs" />
-     <Compile Include="Assets\Scripts\Loader.cs" />
-     <Compile Include="Assets\Scripts\NPC.cs" />
-     <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\SimpleJSON.cs" />
-     <Compile Include="Assets\Scripts\Soul.cs" />
-     <Compile Include="Assets\Scripts\Story.cs" />
-     <Compile Include="Assets\Scripts\TrainLoader.cs" />
+     <Compile Include="Assets\Scripts\Data\DataBin.cs" />
+     <Compile Include="Assets\Scripts\Data\Game.cs" />
+     <Compile Include="Assets\Scripts\Data\GameData.cs" />
+     <Compile Include="Assets\Scripts\Data\Story.cs" />
+     <Compile Include="Assets\Scripts\Entities\Clue.cs" />
+     <Compile Include="Assets\Scripts\Entities\Conversation.cs" />
+     <Compile Include="Assets\Scripts\Entities\DialogLine.cs" />
+     <Compile Include="Assets\Scripts\Entities\Item.cs" />
+     <Compile Include="Assets\Scripts\Entities\Mystery.cs" />
+     <Compile Include="Assets\Scripts\Entities\NPC.cs" />
+     <Compile Include="Assets\Scripts\Entities\Soul.cs" />
+     <Compile Include="Assets\Scripts\UI\DialogGUI.cs" />
+     <Compile Include="Assets\Scripts\UI\FixedCamera.cs" />
+     <Compile Include="Assets\Scripts\UI\Journal.cs" />
+     <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\UI\SaveOption.cs" />
+     <Compile Include="Assets\Scripts\UI\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\UI\TrainLoader.cs" />
+     <Compile Include="Assets\Scripts\Utility\SimpleJSON.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
@@ -123,20 +129,26 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
      <None Include="Assets\CSharp 6.0 Support\AsyncTools\Plugins\System.Threading.xml" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="AsyncBridge.Net35">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/AsyncBridge.Net35.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/AsyncBridge.Net35.dll</HintPath>
  </Reference>
  <Reference Include="System.Threading">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/System.Threading.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/CSharp 6.0 Support/AsyncTools/Plugins/System.Threading.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/Users/gjr8050/SoulTrain/Unity/Assets/Scripts/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>D:/Users/ms8565/SoulTrain/Unity/Assets/Scripts/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
