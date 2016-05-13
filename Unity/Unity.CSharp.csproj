@@ -114,6 +114,9 @@
     <Compile Include="Assets\Scripts\UI\FixedCamera.cs" />
     <Compile Include="Assets\Scripts\UI\Journal.cs" />
     <Compile Include="Assets\Scripts\UI\LoadMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\MysteriesPage.cs" />
+    <Compile Include="Assets\Scripts\UI\MysteryBlock.cs" />
+    <Compile Include="Assets\Scripts\UI\MysteryPage.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\UI\SaveOption.cs" />
     <Compile Include="Assets\Scripts\UI\SceneLoader.cs" />
