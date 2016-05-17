@@ -11,6 +11,8 @@ GameObject:
   - 33: {fileID: 3365500}
   - 23: {fileID: 2395568}
   - 95: {fileID: 9578426}
+  - 65: {fileID: 6573688}
+  - 65: {fileID: 6540678}
   m_Layer: 0
   m_Name: DiningDivider
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.399231, y: 2.81587267, z: -.49000001}
+  m_LocalPosition: {x: -25.136528, y: -.924659014, z: -12.9975948}
   m_LocalScale: {x: .0328084007, y: .0328084007, z: .0328084007}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,6 +65,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123284}
   m_Mesh: {fileID: 4300000, guid: 33dea872545c59e40b614f4293e29727, type: 3}
+--- !u!65 &6540678
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.17506886, y: 132.935501, z: 57.6022491}
+  m_Center: {x: 43.1889877, y: 61.8906441, z: -88.8271561}
+--- !u!65 &6573688
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.27517462, y: 132.935501, z: 53.5276985}
+  m_Center: {x: 43.4103127, y: 61.8906441, z: 28.9376202}
 --- !u!95 &9578426
 Animator:
   serializedVersion: 3

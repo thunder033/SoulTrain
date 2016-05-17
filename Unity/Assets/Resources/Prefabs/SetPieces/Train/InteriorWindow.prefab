@@ -371,6 +371,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 490870}
   - 95: {fileID: 9559372}
+  - 65: {fileID: 6539988}
   m_Layer: 0
   m_Name: InteriorWindow
   m_TagString: Untagged
@@ -757,7 +758,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .472184181, y: -1.25063753, z: 14.9435997}
+  m_LocalPosition: {x: -24.1415558, y: -1.68684864, z: -12.5187798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496002}
@@ -823,6 +824,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110454}
   m_Mesh: {fileID: 4300000, guid: e2a194e4f18b2f74eb338d0efd2861fc, type: 3}
+--- !u!65 &6539988
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.61039114, y: 4.63214302, z: .255936623}
+  m_Center: {x: -.585186005, y: 3.35566044, z: -3.98423386}
 --- !u!95 &9559372
 Animator:
   serializedVersion: 3
