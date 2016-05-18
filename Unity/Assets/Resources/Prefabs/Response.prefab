@@ -10,6 +10,7 @@ GameObject:
   - 224: {fileID: 22428222}
   - 222: {fileID: 22296208}
   - 114: {fileID: 11489812}
+  - 114: {fileID: 11496776}
   m_Layer: 5
   m_Name: Response
   m_TagString: Untagged
@@ -38,7 +39,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ff68fc7072e861246b69efc53dfcb05d, type: 3}
-    m_FontSize: 24
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -49,6 +50,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &11496776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: .5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!222 &22296208
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -118,7 +133,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_FontData.m_FontSize
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
