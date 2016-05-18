@@ -59,6 +59,8 @@ public class Clue : StoryElement {
     {
         Discovered = true;
         Debug.Log("Discovered " + Name);
+        Notification notification = ((GameObject)GameObject.Instantiate(Resources.Load("Prefabs/Notification"))).GetComponent<Notification>();
+        notification.Show("Discovered Clue: " + Name);
     }
 }
 
