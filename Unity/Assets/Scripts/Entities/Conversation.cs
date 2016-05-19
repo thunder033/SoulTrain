@@ -29,6 +29,9 @@ public class Conversation : StoryElement
 
     public void Load(GameData game)
     {
+        if (game.Conversations.ContainsKey(id))
+            return;
+
         SetComplete(game.Conversations[id]);
     }
 

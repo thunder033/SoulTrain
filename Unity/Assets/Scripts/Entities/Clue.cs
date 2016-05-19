@@ -55,6 +55,13 @@ public class Clue : StoryElement {
         Hint = hint;
     }
 
+    public void Load(GameData game) {
+        if (!game.Clues.ContainsKey(id))
+            return;
+
+        Discovered = game.Clues[id];
+    }
+
     public void Reveal()
     {
         Discovered = true;
@@ -79,5 +86,11 @@ public class ClueBin : DataBin
 
         AddInstance(clue);
         return clue;
+    }
+
+    public override void LoadGame(GameData game) {
+        foreach (Clue clue in GetAll()) {
+            clue.Load(game);
+        }
     }
 }

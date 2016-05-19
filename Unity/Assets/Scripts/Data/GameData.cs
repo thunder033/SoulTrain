@@ -9,6 +9,8 @@ public class GameData {
     DateTime lastSaved;
     public Dictionary<string, bool> Conversations { get; private set; }
 
+    public Dictionary<string, bool> Clues { get; private set; }
+
     public GameData(string aName)
     {
         name = aName;
@@ -19,6 +21,10 @@ public class GameData {
         {
             Conversations.Add(convo.id, false);
         }
+
+        foreach (var clue in Story.GetElements<Clue>()) {
+            Clues.Add(clue.id, false);
+        }
     }
 
     public void Save()
@@ -27,6 +33,10 @@ public class GameData {
         foreach (var convo in Story.GetElements<Conversation>())
         {
             Conversations.Add(convo.id, convo.IsComplete);
+        }
+
+        foreach (var clue in Story.GetElements<Clue>()) {
+            Clues.Add(clue.id, clue.Discovered);
         }
 
         lastSaved = DateTime.Now;
