@@ -9,6 +9,7 @@ public class MysteryPage : MonoBehaviour, IPage {
     Journal journal;
 
     public Text mysteryTitle;
+    public Text clueText;
 
     // Use this for initialization
     void Start () {
@@ -28,5 +29,16 @@ public class MysteryPage : MonoBehaviour, IPage {
         this.mystery = mystery;
 
         mysteryTitle.text = mystery.Name;
+
+        clueText.text = "";
+        Clue clue = mystery.FirstClue;
+        do {
+            clueText.text += clue.Name + ": " + clue.Text + "\n\n";
+            clue = clue.NextClue;
+        } while (clue != null && clue.Discovered);
+
+        if(clue != null && !clue.Discovered) {
+            clueText.text += clue.Hint;
+        }
     }
 }

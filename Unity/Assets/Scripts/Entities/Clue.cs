@@ -72,7 +72,7 @@ public class ClueBin : DataBin
 
     public override IStoryElement FromJSON(JSONNode data)
     {
-        Clue clue = new Clue(data["id"], data["name"], data["text"], data["hint"]);
+        Clue clue = new Clue(data["id"], data["name"], data["description"], data["hint"]);
         clue.NextClue = Story.GetElementById<Clue>(data["nextClueId"]);
         clue.PreviousClue = Story.GetElementById<Clue>(data["prevClueId"]);
         clue.soulIDs = ToStringArray(data["soulsOfInterestIds"].AsArray);
