@@ -59,7 +59,18 @@ public class Journal : MonoBehaviour {
             page.OnLoad(this);
         }
     }
+
+    public void openPause()
+    {
+        OpenSection(Section.PauseMenu);
+    }
+    public void openMysteries()
+    {
+        OpenSection(Section.Mysteries);
+    }
 }
+
+
 
 public interface IPage {
     void OnLoad(Journal journal);

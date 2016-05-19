@@ -1,20 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.CSharp", "Unity.CSharp.csproj", "{4123F183-8F61-27AE-EA27-294DDE0CC7EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.CSharp.Editor", "Unity.CSharp.Editor.csproj", "{27D29A4B-FDE7-B1BD-E226-B13A243BCA00}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B316CC7-3BDE-4503-B5B7-9C0A0FA7F859}"
-	ProjectSection(SolutionItems) = preProject
-		Assets\Resources\Data\Clues.json = Assets\Resources\Data\Clues.json
-		Assets\Resources\Data\Conversations.json = Assets\Resources\Data\Conversations.json
-		Assets\Resources\Data\DialogLines.json = Assets\Resources\Data\DialogLines.json
-		Assets\Resources\Data\Mysteries.json = Assets\Resources\Data\Mysteries.json
-		Assets\Resources\Data\Souls.json = Assets\Resources\Data\Souls.json
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
